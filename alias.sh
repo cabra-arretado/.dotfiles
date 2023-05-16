@@ -117,6 +117,11 @@ if [ -x "$(command -v ipdb)" ]; then
     export PYTHONBREAKPOINT="ipdb.set_trace"
 fi
 
+# If there is no tmux session, create oneline
+if ! [[ $TMUX ]] ; then
+    tmux new -s "Main"
+fi
+
 # fzf stuff
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
