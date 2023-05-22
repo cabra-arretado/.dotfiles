@@ -43,6 +43,7 @@ map({ 'n', 'v' }, '<leader>t', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree tog
 local telescope = require('telescope.builtin')
 map({ 'n', 'v' }, '<leader>ss', telescope.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sf', telescope.find_files, { desc = '[S]earch [F]iles' })
+map({ 'n', 'v' }, '<C-p>', telescope.find_files, { desc = '[S]earch [F]iles' })
 map({ 'n', 'v' }, '<leader>sd', '<cmd>Telescope file_browser<cr>', { desc = '[S]earch [D]irectory' })
 map({ 'n', 'v' }, '<leader>sw', telescope.live_grep, { desc = '[S]earch in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sc', telescope.grep_string, { desc = '[S]earch String Under [C]ursor' })
