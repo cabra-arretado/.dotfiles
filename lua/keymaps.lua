@@ -57,6 +57,12 @@ map({ 'n', 'v' }, '<leader>/', function()
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
+map({ 'n', 'v' }, '<C-f>', function()
+  telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    -- winblend = 10,
+    previewer = false
+  })
+end, { desc = '[/] Fuzzy find in the current buffer]' })
 map({ 'n', 'v' }, '<leader>gd', telescope.git_status, { desc = '[G]it [D]iff' })
 map({ 'n', 'v' }, '<leader>gc', telescope.git_commits, { desc = '[G]it [C]ommits' })
 map({ 'n', 'v' }, '<leader>gbc', telescope.git_bcommits, { desc = '[G]it [B]ranch [C]ommits' })
