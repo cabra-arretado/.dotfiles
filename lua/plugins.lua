@@ -53,6 +53,7 @@ return require('packer').startup(
       } }
     use { 'akinsho/toggleterm.nvim' }
     use { 'phaazon/hop.nvim' }
+    use { 'folke/todo-comments.nvim' }
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then
       require('packer').sync()
