@@ -32,7 +32,7 @@ map({ 'n', 'v' }, 'K', '<C-b>')
 map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
-map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- TODO: create function in lua that creates new buffer if the current is the one being deleted and is the last one
+map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- TODO-FM: create function in lua that creates new buffer if the current is the one being deleted and is the last one
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- NvimTree
