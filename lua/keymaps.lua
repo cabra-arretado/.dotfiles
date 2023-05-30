@@ -35,9 +35,8 @@ map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
 map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- TODO-FM: create function in lua that creates new buffer if the current is the one being deleted and is the last one
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
--- NvimTree
-map({ 'n', 'v' }, '<leader>n', '<cmd>NvimTreeFindFileToggle<cr>', { desc = 'NvimTree focus file toggle' })
-map({ 'n', 'v' }, '<leader>t', '<cmd>NvimTreeToggle<cr>', { desc = 'NvimTree toggle' })
+-- Neotree
+map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'NvimTree focus file toggle' })
 
 -- Telescope
 local telescope = require('telescope.builtin')
