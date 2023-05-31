@@ -36,7 +36,7 @@ map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) 
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- Neotree
-map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'NvimTree focus file toggle' })
+map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree focus file toggle' })
 
 -- Telescope
 local telescope = require('telescope.builtin')
