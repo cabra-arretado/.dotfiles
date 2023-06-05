@@ -35,7 +35,6 @@ return require('packer').startup(
     -- }
     use { 'nvim-lua/plenary.nvim' }
     use { 'nvim-telescope/telescope.nvim' }
-    use { 'nvim-telescope/telescope-file-browser.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim' }
     use { 'akinsho/bufferline.nvim' }
     use { 'nvim-lualine/lualine.nvim' }

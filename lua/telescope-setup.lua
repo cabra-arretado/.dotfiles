@@ -94,12 +94,5 @@ telescope.setup {
     },
   },
   extensions = {
-    file_browser = {
-      initial_mode = 'normal',
-      grouped = true,
-      hider_parent_dir = true,
-    }
   }
 }
-
-require("telescope").load_extension "file_browser"

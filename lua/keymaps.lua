@@ -36,13 +36,13 @@ map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical w
 -- Neotree
 map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree focus file toggle' })
 map({ 'n', 'v' }, 'B', '<cmd>Neotree toggle source=buffers<cr>', { desc = 'Neo-tree focus file toggle' })
+map({ 'n', 'v' }, '<leader>sd', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
 
 -- Telescope
 local telescope = require('telescope.builtin')
 map({ 'n', 'v' }, '<leader>ss', telescope.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sf', telescope.find_files, { desc = '[S]earch [F]iles' })
 map({ 'n', 'v' }, '<C-p>', telescope.find_files, { desc = '[S]earch [F]iles' })
-map({ 'n', 'v' }, '<leader>sd', '<cmd>Telescope file_browser<cr>', { desc = '[S]earch [D]irectory' })
 map({ 'n', 'v' }, '<leader>sw', telescope.live_grep, { desc = '[S]earch in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sc', telescope.grep_string, { desc = '[S]earch String Under [C]ursor' })
 map({ 'n', 'v' }, '<leader>sb', telescope.buffers, { desc = '[S]earch [B]uffers' })
