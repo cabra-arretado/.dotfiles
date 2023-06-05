@@ -6,13 +6,14 @@ local api = vim.api -- access the VIM Lua API
 require('plugins')
 require('telescope-setup')
 require('treesitter-setup')
+require('neotree-setup')
 require('bufferline-setup')
 require('lualine-setup')
-require('nerdtree-setup')
 require('lsp-setup')
 require('cmp-setup')
 require('term-setup')
 require('diversos-setup')
+require('globals')
 
 opt.number = true
 opt.cursorline = true
