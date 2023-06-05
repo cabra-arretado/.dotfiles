@@ -67,7 +67,7 @@ map({ 'n', 'v' }, '<leader>gs', telescope.git_status, { desc = '[G]it [S]tatus' 
 map({ 'n', 'v' }, '<leader>km', telescope.keymaps, { desc = '[K]ey[m]aps' })
 map({ 'n', 'v' }, '<leader>h', telescope.help_tags, { desc = '[H]elp Neovim' })
 map({ 'n', 'v' }, '<leader>o', telescope.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
-map({ 'n', 'v' }, '<leader>td', '<cmd>TodoTelescope<cr>', { desc = '[T]o[D]o List' })
+map({ 'n', 'v' }, '<leader>d', '<cmd>TodoTelescope<cr>', { desc = '[T]o[D]o List' })
 map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
 
 
