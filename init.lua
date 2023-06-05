@@ -13,6 +13,7 @@ require('lsp-setup')
 require('cmp-setup')
 require('term-setup')
 require('diversos-setup')
+require('globals')
 
 opt.number = true
 opt.cursorline = true

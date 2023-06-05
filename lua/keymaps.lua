@@ -14,9 +14,7 @@ end
 --General
 map({ 'n', 'v', 't' }, ';', ':')
 map({ 'n', 'v', 't' }, '&', '<cmd>noh<cr>')
-map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration'}) --  Register registration
-map({ 'n', 'v' }, "'", ';') -- Repeat last motion foward
-map({ 'n', 'v' }, '"', ',') -- Repeat last motion backward
+map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration' }) --  Register registration
 map('i', 'jk', '<Esc>')
 map('i', 'JK', '<Esc>')
 map('n', '<C-s>', '<cmd>w<cr>', { desc = 'Salve Buffer' })
@@ -37,6 +35,7 @@ map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical w
 
 -- Neotree
 map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree focus file toggle' })
+map({ 'n', 'v' }, 'B', '<cmd>Neotree toggle source=buffers<cr>', { desc = 'Neo-tree focus file toggle' })
 
 -- Telescope
 local telescope = require('telescope.builtin')
@@ -69,7 +68,7 @@ map({ 'n', 'v' }, '<leader>km', telescope.keymaps, { desc = '[K]ey[m]aps' })
 map({ 'n', 'v' }, '<leader>h', telescope.help_tags, { desc = '[H]elp Neovim' })
 map({ 'n', 'v' }, '<leader>o', telescope.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>td', '<cmd>TodoTelescope<cr>', { desc = '[T]o[D]o List' })
-map({ 'n', 'v' }, '<leader>gbl', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
+map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
 
 
 -- Just for documentation
@@ -85,4 +84,3 @@ map({ 'n', 'v' }, 's', '<cmd>HopChar2<cr>', { desc = 'Jump to 2 characters' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
-
