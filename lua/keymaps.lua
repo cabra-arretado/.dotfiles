@@ -27,7 +27,7 @@ map({ 'n', 'v' }, 'J', '<C-f>')
 map({ 'n', 'v' }, 'K', '<C-b>')
 
 -- Buffer control
-map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
+-- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
 map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- TODO-FM: create function in lua that creates new buffer if the current is the one being deleted and is the last one
@@ -35,7 +35,7 @@ map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical w
 
 -- Neotree
 map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree focus file toggle' })
-map({ 'n', 'v' }, 'B', '<cmd>Neotree toggle source=buffers<cr>', { desc = 'Neo-tree focus file toggle' })
+-- map({ 'n', 'v' }, 'B', '<cmd>Neotree toggle source=buffers<cr>', { desc = 'Neo-tree focus file toggle' })
 map({ 'n', 'v' }, '<leader>sd', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
 
 -- Telescope
@@ -84,3 +84,11 @@ map({ 'n', 'v' }, 's', '<cmd>HopChar2<cr>', { desc = 'Jump to 2 characters' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
+
+-- TODO: test for the buffer change
+map({ 'n', 'v' }, 'B', function()
+  telescope.buffers(require('telescope.themes').get_dropdown {
+    previewer = false
+  })
+end, { desc = '[/] Fuzzy find in the current buffer]' })
+

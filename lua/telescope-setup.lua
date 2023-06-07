@@ -89,10 +89,10 @@ telescope.setup {
       mappings = {
 	n = {
 	  ["x"] = require("telescope.actions").delete_buffer,
+	  ["B"] = require("telescope.actions").move_selection_next,
+	  ["b"] = require("telescope.actions").select_default,
 	},
       },
     },
   },
-  extensions = {
-  }
 }
