@@ -8,6 +8,7 @@ end
 
 bufferline.setup {
   options = {
+    diagnostics = 'nvim_lsp',
     style = 'padded_slant',
     mode = 'buffers',
     indicator = {
@@ -22,7 +23,7 @@ bufferline.setup {
     separator_style = "thick",
     offsets = {
       {
-        filetype = "NvimTree",
+        filetype = "neo-tree",
         text = "File Explorer",
         highlight = "Directory",
         separator = true
