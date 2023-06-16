@@ -9,5 +9,5 @@ TODO:
     - To create the folder for .config/nvim if non existing.
     - To create a Makefile with the install Makefile
 - Make that README better.
-- Install Lazy.nvim
+DONE - Install Lazy.nvim
 
