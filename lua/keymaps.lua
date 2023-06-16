@@ -30,13 +30,11 @@ map({ 'n', 'v' }, 'K', '<C-b>')
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
-map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- TODO-FM: create function in lua that creates new buffer if the current is the one being deleted and is the last one
+map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- fmtodo: create function in lua that creates new buffer if the current is the one being deleted and is the last one
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- Neotree
-map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree focus file toggle' })
--- map({ 'n', 'v' }, 'B', '<cmd>Neotree toggle source=buffers<cr>', { desc = 'Neo-tree focus file toggle' })
-map({ 'n', 'v' }, '<leader>sd', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
+map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
 
 -- Telescope
 local telescope_builtin = require('telescope.builtin')
@@ -81,9 +79,9 @@ map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, {
 map({ 'n', 't', 'v' }, '<leader>t', '<cmd>ToggleTerm size=40<cr>')
 map('t', ':q', '<cmd>ToggleTerm size=40<cr>')
 
--- Hop
-map({ 'n', 'v' }, 'S', '<cmd>HopLine<cr>', { desc = 'Jump to line' })
-map({ 'n', 'v' }, 's', '<cmd>HopChar2<cr>', { desc = 'Jump to 2 characters' })
+-- -- Hop
+-- map({ 'n', 'v' }, 'S', '<cmd>HopLine<cr>', { desc = 'Jump to line' })
+-- map({ 'n', 'v' }, 's', '<cmd>HopChar2<cr>', { desc = 'Jump to 2 characters' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
