@@ -10,4 +10,4 @@ TODO:
     - To create a Makefile with the install Makefile
 - Make that README better.
 DONE - Install Lazy.nvim
-
+- Create check if floating buffer and if so close before opening other floating buffer

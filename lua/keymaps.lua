@@ -34,7 +34,8 @@ map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) 
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- Neotree
-map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
+map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle float reveal<cr>', { desc = '[N]eotree' })
+map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', { desc = '[S]earch [B]uffers' })
 
 -- Telescope
 local telescope_builtin = require('telescope.builtin')
@@ -45,7 +46,6 @@ map({ 'n', 'v' }, '<C-p>', telescope_builtin.find_files, { desc = '[S]earch [F]i
 map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
 map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
-map({ 'n', 'v' }, '<leader>sb', telescope_builtin.buffers, { desc = '[S]earch [B]uffers' })
 map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[S]earch [G]it Files' })
 map({ 'n', 'v' }, '<leader>sr', telescope_builtin.registers, { desc = '[S]earch [R]egisters' })
 map({ 'n', 'v' }, '<leader>sj', telescope_builtin.jumplist, { desc = '[S]earch [J]umplist' })
