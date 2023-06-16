@@ -20,14 +20,18 @@ require('diversos-setup')
 require('globals')
 
 opt.number = true
+opt.relativenumber = true
+opt.shortmess:append({ W = true, I = true, c = true })
 opt.cursorline = true
 opt.splitright = true
+opt.completeopt = "menu,menuone,noselect"
 opt.termguicolors = true
 opt.cursorline = true
+opt.ignorecase = true
 opt.visualbell = true
 opt.smartcase = true
 opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
-opt.clipboard = 'unnamed'
+opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
 opt.laststatus = 3
 opt.shiftwidth = 4
@@ -38,9 +42,9 @@ opt.breakindent = true
 opt.linebreak = true
 g.mapleader = ','
 g.maplocalleader = '\\'
+g.markdown_remmended_style = 0
 
 -- Theme
-opt.termguicolors = true
 local theme = [[tokyonight]]
 cmd.colorscheme(theme)
 

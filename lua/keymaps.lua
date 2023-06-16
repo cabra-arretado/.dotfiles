@@ -33,6 +33,10 @@ map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
 map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- fmtodo: create function in lua that creates new buffer if the current is the one being deleted and is the last one
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
+-- identing
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
 -- Neotree
 map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle float reveal<cr>', { desc = '[N]eotree' })
 map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', { desc = '[S]earch [B]uffers' })

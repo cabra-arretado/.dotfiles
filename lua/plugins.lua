@@ -57,7 +57,23 @@ return require('lazy').setup({
   { 'akinsho/bufferline.nvim' },
   { 'nvim-lualine/lualine.nvim' },
   { 'nvim-tree/nvim-web-devicons' },
-  { 'lukas-reineke/indent-blankline.nvim' },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      char = "│",
+      filetype_exclude = {
+        "help",
+        "neo-tree",
+        "lazy",
+        "mason",
+        "notify",
+        "toggleterm",
+      },
+      show_trailing_blankline_indent = false,
+      show_current_context = false,
+    },
+  },
   {
     'hrsh7th/nvim-cmp',
     lazy = true,
@@ -78,6 +94,7 @@ return require('lazy').setup({
     'folke/todo-comments.nvim',
     lazy = true
   },
+  { "stevearc/dressing.nvim" },
   {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = true,
