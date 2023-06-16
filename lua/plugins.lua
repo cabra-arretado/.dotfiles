@@ -12,13 +12,28 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
-  { 'navarasu/onedark.nvim' },
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    'rcarriga/nvim-notify',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      -- TODO: Make the stages "fade" work without warning
+      stages = "static"
+    },
+    init = function() vim.notify = require('notify') end
+  },
   { 'lewis6991/gitsigns.nvim' },
   { 'tpope/vim-fugitive' },
-  { 'tpope/vim-commentary' },
-  { 'junegunn/fzf' },
-  { 'junegunn/fzf.vim' },
-  { 'christoomey/vim-tmux-navigator' },
+  {
+    'tpope/vim-commentary',
+  },
+  { 'christoomey/vim-tmux-navigator', },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -26,20 +41,26 @@ return require('lazy').setup({
       'williamboman/mason-lspconfig.nvim',
     }
   },
-  {'j-hui/fidget.nvim',
+  {
+    'j-hui/fidget.nvim',
     opts = {}
   },
   { 'nvim-treesitter/nvim-treesitter' },
   { 'nvim-lua/plenary.nvim' },
-  { 'nvim-telescope/telescope.nvim' },
-  { 'nvim-telescope/telescope-fzf-native.nvim' },
+  {
+    'nvim-telescope/telescope.nvim',
+    lazy = true,
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim'
+    }
+  },
   { 'akinsho/bufferline.nvim' },
   { 'nvim-lualine/lualine.nvim' },
   { 'nvim-tree/nvim-web-devicons' },
-  { 'nvim-tree/nvim-tree.lua' },
   { 'lukas-reineke/indent-blankline.nvim' },
   {
     'hrsh7th/nvim-cmp',
+    lazy = true,
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
@@ -49,15 +70,21 @@ return require('lazy').setup({
       'L3MON4D3/LuaSnip',
     },
   },
-  { 'akinsho/toggleterm.nvim' },
-  { 'phaazon/hop.nvim' },
-  { 'folke/todo-comments.nvim' },
+  {
+    'akinsho/toggleterm.nvim',
+    lazy = true
+  },
+  {
+    'folke/todo-comments.nvim',
+    lazy = true
+  },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    lazy = true,
     branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",   -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
   }, })

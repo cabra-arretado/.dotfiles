@@ -40,8 +40,8 @@ g.mapleader = ','
 g.maplocalleader = '\\'
 
 -- Theme
-require 'onedark'.setup({style = 'deep'})
-local theme = [[onedark]]
+opt.termguicolors = true
+local theme = [[tokyonight]]
 cmd.colorscheme(theme)
 
 
