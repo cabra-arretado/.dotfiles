@@ -3,6 +3,10 @@ local g = vim.g -- to access global variables
 local opt = vim.opt -- to set options
 local api = vim.api -- access the VIM Lua API
 
+-- Leader to be declared before plugins
+g.mapleader = ','
+g.maplocalleader = '\\'
+
 require('plugins')
 require('telescope-setup')
 require('treesitter-setup')

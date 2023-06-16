@@ -1,69 +1,63 @@
-local ensure_packer = function()
-  -- Ensure that Packer is installed on Neovim start
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd([[packadd packer.nvim]])
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(
-  function(use)
-    use { 'wbthomason/packer.nvim' }
-    use { 'navarasu/onedark.nvim' }
-    use { 'lewis6991/gitsigns.nvim' }
-    use { 'tpope/vim-fugitive' }
-    use { 'tpope/vim-commentary' }
-    use { 'junegunn/fzf' }
-    use { 'junegunn/fzf.vim' }
-    use { 'christoomey/vim-tmux-navigator' }
-    use { 'neovim/nvim-lspconfig',
-      requires = {
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
-        'j-hui/fidget.nvim',
-      }, }
-    use { 'nvim-treesitter/nvim-treesitter' }
-    -- use { -- Additional text objects via treesitter
-    --   'nvim-treesitter/nvim-treesitter-textobjects',
-    --   after = 'nvim-treesitter',
-    -- }
-    use { 'nvim-lua/plenary.nvim' }
-    use { 'nvim-telescope/telescope.nvim' }
-    use { 'nvim-telescope/telescope-fzf-native.nvim' }
-    use { 'akinsho/bufferline.nvim' }
-    use { 'nvim-lualine/lualine.nvim' }
-    use { 'nvim-tree/nvim-web-devicons' }
-    use { 'nvim-tree/nvim-tree.lua' }
-    use { 'lukas-reineke/indent-blankline.nvim' }
-    use { 'hrsh7th/nvim-cmp',
-      requires = {
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-        'L3MON4D3/LuaSnip',
-      } }
-    use { 'akinsho/toggleterm.nvim' }
-    use { 'phaazon/hop.nvim' }
-    use { 'folke/todo-comments.nvim' }
-    use {
-      "nvim-neo-tree/neo-tree.nvim",
-      branch = "v2.x",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-      }
+return require('lazy').setup({
+  { 'navarasu/onedark.nvim' },
+  { 'lewis6991/gitsigns.nvim' },
+  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-commentary' },
+  { 'junegunn/fzf' },
+  { 'junegunn/fzf.vim' },
+  { 'christoomey/vim-tmux-navigator' },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
     }
-    -- Automatically set up your configuration after cloning packer.nvim
-    if packer_bootstrap then
-      require('packer').sync()
-    end
-  end)
+  },
+  {'j-hui/fidget.nvim',
+    opts = {}
+  },
+  { 'nvim-treesitter/nvim-treesitter' },
+  { 'nvim-lua/plenary.nvim' },
+  { 'nvim-telescope/telescope.nvim' },
+  { 'nvim-telescope/telescope-fzf-native.nvim' },
+  { 'akinsho/bufferline.nvim' },
+  { 'nvim-lualine/lualine.nvim' },
+  { 'nvim-tree/nvim-web-devicons' },
+  { 'nvim-tree/nvim-tree.lua' },
+  { 'lukas-reineke/indent-blankline.nvim' },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
+      'L3MON4D3/LuaSnip',
+    },
+  },
+  { 'akinsho/toggleterm.nvim' },
+  { 'phaazon/hop.nvim' },
+  { 'folke/todo-comments.nvim' },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",   -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+  }, })
