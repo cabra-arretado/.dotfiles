@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 return require('lazy').setup({
   { 'navarasu/onedark.nvim' },
   { 'lewis6991/gitsigns.nvim' },
+  { 'rcarriga/nvim-notify',
+    config = function() vim.notify = require('notify') end
+  },
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-commentary' },
   { 'junegunn/fzf' },

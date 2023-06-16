@@ -19,6 +19,7 @@ require('term-setup')
 require('diversos-setup')
 require('globals')
 
+opt.termguicolors = true
 opt.number = true
 opt.cursorline = true
 opt.splitright = true
