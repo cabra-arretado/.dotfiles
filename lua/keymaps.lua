@@ -39,37 +39,40 @@ map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle<cr>', { desc = 'Neo-tree foc
 map({ 'n', 'v' }, '<leader>sd', '<cmd>Neotree toggle float<cr>', { desc = '[S]earch [D]irectory' })
 
 -- Telescope
-local telescope = require('telescope.builtin')
-map({ 'n', 'v' }, '<leader>ss', telescope.treesitter, { desc = '[S]earch [S]ymbols' })
-map({ 'n', 'v' }, '<leader>sf', telescope.find_files, { desc = '[S]earch [F]iles' })
-map({ 'n', 'v' }, '<C-p>', telescope.find_files, { desc = '[S]earch [F]iles' })
-map({ 'n', 'v' }, '<leader>sw', telescope.live_grep, { desc = '[S]earch in [W]orkspace' })
-map({ 'n', 'v' }, '<leader>sp', telescope.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
-map({ 'n', 'v' }, '<leader>sc', telescope.grep_string, { desc = '[S]earch String Under [C]ursor' })
-map({ 'n', 'v' }, '<leader>sb', telescope.buffers, { desc = '[S]earch [B]uffers' })
-map({ 'n', 'v' }, '<leader>sg', telescope.git_files, { desc = '[S]earch [G]it Files' })
-map({ 'n', 'v' }, '<leader>sr', telescope.registers, { desc = '[S]earch [R]egisters' })
-map({ 'n', 'v' }, '<leader>sj', telescope.jumplist, { desc = '[S]earch [J]umplist' })
-map({ 'n', 'v' }, '<leader>gc', telescope.git_commits, { desc = '[G]it [C]ommits' })
-map({ 'n', 'v' }, '<leader>gbr', telescope.git_branches, { desc = '[G]it [B]ranches' })
-map({ 'n', 'v' }, '<leader>gs', telescope.git_status, { desc = '[G]it [S]tatus' })
-map({ 'n', 'v' }, '<leader>km', telescope.keymaps, { desc = '[K]ey[m]aps' })
-map({ 'n', 'v' }, '<leader>h', telescope.help_tags, { desc = '[H]elp Neovim' })
-map({ 'n', 'v' }, '<leader>o', telescope.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
+local telescope_builtin = require('telescope.builtin')
+
+map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
+map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
+map({ 'n', 'v' }, '<C-p>', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
+map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
+map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
+map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
+map({ 'n', 'v' }, '<leader>sb', telescope_builtin.buffers, { desc = '[S]earch [B]uffers' })
+map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[S]earch [G]it Files' })
+map({ 'n', 'v' }, '<leader>sr', telescope_builtin.registers, { desc = '[S]earch [R]egisters' })
+map({ 'n', 'v' }, '<leader>sj', telescope_builtin.jumplist, { desc = '[S]earch [J]umplist' })
+map({ 'n', 'v' }, '<leader>gc', telescope_builtin.git_commits, { desc = '[G]it [C]ommits' })
+map({ 'n', 'v' }, '<leader>gbr', telescope_builtin.git_branches, { desc = '[G]it [B]ranches' })
+map({ 'n', 'v' }, '<leader>gs', telescope_builtin.git_status, { desc = '[G]it [S]tatus' })
+map({ 'n', 'v' }, '<leader>km', telescope_builtin.keymaps, { desc = '[K]ey[m]aps' })
+map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neovim' })
+map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>d', '<cmd>TodoTelescope<cr>', { desc = '[T]o[D]o List' })
 map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
 map({ 'n', 'v' }, '<leader>/', function()
-  telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     -- winblend = 10,
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
 map({ 'n', 'v' }, '<C-f>', function()
-  telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     -- winblend = 10,
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
+map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, { desc = 'Show [A][L]erts (Notify)' })
+
 
 -- Just for documentation
 -- map('n', 'gd', function() return require('telescope.builtin').lsp_definitions(require('telescope.themes').get_cursor()) end)
@@ -87,7 +90,7 @@ map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
 
 -- TODO: test for the buffer change
 map({ 'n', 'v' }, 'B', function()
-  telescope.buffers(require('telescope.themes').get_dropdown {
+  telescope_builtin.buffers(require('telescope.themes').get_dropdown {
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })

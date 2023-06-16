@@ -19,7 +19,6 @@ require('term-setup')
 require('diversos-setup')
 require('globals')
 
-opt.termguicolors = true
 opt.number = true
 opt.cursorline = true
 opt.splitright = true
@@ -41,8 +40,8 @@ g.mapleader = ','
 g.maplocalleader = '\\'
 
 -- Theme
-require 'onedark'.setup({style = 'deep'})
-local theme = [[onedark]]
+opt.termguicolors = true
+local theme = [[tokyonight]]
 cmd.colorscheme(theme)
 
 
