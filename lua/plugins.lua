@@ -94,7 +94,10 @@ return require('lazy').setup({
     'folke/todo-comments.nvim',
     lazy = true
   },
-  { "github/copilot.vim" },
+  { "github/copilot.vim",
+    lazy = false,
+    priority = 999,
+  },
   { "stevearc/dressing.nvim" },
   {
     "nvim-neo-tree/neo-tree.nvim",

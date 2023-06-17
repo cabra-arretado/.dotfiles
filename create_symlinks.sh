@@ -12,14 +12,24 @@ if [ $answer == "yes" ]; then
     PATH_TMUX="$HOME/.tmux.conf"
 
     PATH_OLD="$HOME/.original_dotfiles"
-    mkdir $PATH_OLD
+    DOTFILES_REPO="$HOME/dotfiles"
 
+    # Check if the PATH_OLD exists, if not, create it
+    if [ ! -d "$PATH_OLD" ]; then
+	mkdir $PATH_OLD
+    fi 
+
+    # check if PATH_NVIM exists, if not, create it
+    if [ ! -d "$PATH_NVIM" ]; then
+	mkdir $PATH_NVIM
+    fi
+
+    # try to move the old files to the PATH_OLD
     mv $PATH_VIMRC $PATH_OLD
     mv $PATH_NVIMCONFIG $PATH_OLD
     mv $PATH_TMUX $PATH_OLD
 
-    DOTFILES_REPO="$HOME/dotfiles"
-
+    # create the symlinks
     ln -sf $DOTFILES_REPO/vimrc $PATH_VIMRC
     ln -sf $DOTFILES_REPO/tmux.conf $PATH_TMUX
 
@@ -27,6 +37,6 @@ if [ $answer == "yes" ]; then
     ln -sf $DOTFILES_REPO/init.lua $PATH_NVIMCONFIG
     sudo ln -sf $DOTFILES_REPO/lua $PATH_NVIM/lua
 
-    echo "symlinks created and old saved on ~/.oldfiles"
+    echo "Symlinks created successfully. Old files moved to $PATH_OLD. Enjoy my NeoVim config!"
 fi
 
