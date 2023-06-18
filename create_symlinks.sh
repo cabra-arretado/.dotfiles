@@ -8,12 +8,12 @@ if [ $answer == "yes" ]; then
 
     DOTFILES_REPO="~/dotfiles"
     PATH_VIMRC="$HOME/.vimrc"
-    PATH_TMUX="$HOME/.tmux.conf"
-    DOTCONFIG="$HOME/.config/"
+    PATH_TMUX="~/.tmux.conf"
+    DOTCONFIG="~/.config/"
 
     # create the symlinks
-    ln -sf $DOTFILES_REPO/vimrc $PATH_VIMRC
-    ln -sf $DOTFILES_REPO/tmux.conf $PATH_TMUX
+    ln -sf ~/dotfiles/vimrc ~/.vimrc
+    ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 
     # NeoVim
     # Create symlink for NeoVim

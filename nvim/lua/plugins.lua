@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local is_dev_present, is_dev = pcall(require, "is_dev")
+
+
 return require('lazy').setup({
   {
     'folke/tokyonight.nvim',
@@ -94,7 +97,8 @@ return require('lazy').setup({
     'folke/todo-comments.nvim',
     lazy = true
   },
-  { "github/copilot.vim",
+  {
+    "github/copilot.vim",
     lazy = false,
     priority = 999,
   },
@@ -108,4 +112,6 @@ return require('lazy').setup({
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
-  }, })
+  },
+}
+)
