@@ -96,6 +96,15 @@ return require('lazy').setup({
   },
   { "stevearc/dressing.nvim" },
   {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    }
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = true,
     branch = "v2.x",
@@ -105,7 +114,6 @@ return require('lazy').setup({
       "MunifTanjim/nui.nvim",
     },
   },
-  { "folke/noice.nvim" },
   -- {
   --   "github/copilot.vim",
   --   lazy = false,
@@ -113,4 +121,3 @@ return require('lazy').setup({
   -- }
 }
 )
-
