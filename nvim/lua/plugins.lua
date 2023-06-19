@@ -43,6 +43,7 @@ return require('lazy').setup({
   },
   {
     'j-hui/fidget.nvim',
+    tag = 'legacy',
     opts = {}
   },
   { 'nvim-treesitter/nvim-treesitter' },
