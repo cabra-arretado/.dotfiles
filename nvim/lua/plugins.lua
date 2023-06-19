@@ -114,10 +114,10 @@ return require('lazy').setup({
       "MunifTanjim/nui.nvim",
     },
   },
-  -- {
-  --   "github/copilot.vim",
-  --   lazy = false,
-  --   priority = 999,
-  -- }
+  {
+    "github/copilot.vim",
+    lazy = false,
+    priority = 999,
+  }
 }
 )
