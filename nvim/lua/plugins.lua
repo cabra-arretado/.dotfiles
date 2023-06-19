@@ -106,11 +106,11 @@ return require('lazy').setup({
     },
   },
   { "folke/noice.nvim" },
-  {
-    "github/copilot.vim",
-    lazy = false,
-    priority = 999,
-  }
+  -- {
+  --   "github/copilot.vim",
+  --   lazy = false,
+  --   priority = 999,
+  -- }
 }
 )
 
