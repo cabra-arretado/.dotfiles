@@ -100,5 +100,6 @@ end, { desc = '[/] Fuzzy find in the current buffer]' })
 
 -- removes tab as a completion key for copilot
 vim.cmd[[let g:copilot_no_tab_map = v:true]]
-vim.cmd[[imap <silent><script><expr> <M-Space> copilot#Accept("\<CR>")]]
-
+map('i', '<M-Space>', 'copilot#Accept()', { expr = true, noremap = true, silent = true })
+map('i', '<M-[>', 'copilot#Previous()', { expr = true, noremap = true, silent = true })
+map('i', '<M-]>', 'copilot#Next()', { expr = true, noremap = true, silent = true })
