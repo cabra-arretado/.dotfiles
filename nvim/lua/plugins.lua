@@ -11,9 +11,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local is_dev_present, is_dev = pcall(require, "is_dev")
-
-
+function Only_dev(plugin, lazy, opts)
+  vim.notify("hello")
+  -- Look for env variable NVIM_DEV_CABRA if you want this plugins to be installed set this env in your .zshrc or .bashrc
+  if vim.env.NVIM_DEV_CABRA == "true" then
+    return {
+      plugin,
+      config = opts,
+      requires = lazy,
+    }
+  end
+end
 return require('lazy').setup({
   {
     'folke/tokyonight.nvim',
@@ -97,11 +105,6 @@ return require('lazy').setup({
     'folke/todo-comments.nvim',
     lazy = true
   },
-  {
-    "github/copilot.vim",
-    lazy = false,
-    priority = 999,
-  },
   { "stevearc/dressing.nvim" },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -113,5 +116,12 @@ return require('lazy').setup({
       "MunifTanjim/nui.nvim",
     },
   },
+  { "folke/noice.nvim" },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    priority = 999,
+  }
 }
 )
+
