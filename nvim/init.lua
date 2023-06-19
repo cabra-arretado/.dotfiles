@@ -7,6 +7,7 @@ local api = vim.api -- access the VIM Lua API
 g.mapleader = ','
 g.maplocalleader = '\\'
 
+require('globals')
 require('plugins')
 require('telescope-setup')
 require('treesitter-setup')
@@ -17,7 +18,6 @@ require('lsp-setup')
 require('cmp-setup')
 require('term-setup')
 require('diversos-setup')
-require('globals')
 
 opt.number = true
 opt.relativenumber = true
