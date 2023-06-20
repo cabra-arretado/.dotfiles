@@ -85,8 +85,7 @@ map({ 'n', 't', 'v' }, '<leader>t', '<cmd>ToggleTerm size=40<cr>')
 map('t', ':q', '<cmd>ToggleTerm size=40<cr>')
 
 -- -- Hop
--- map({ 'n', 'v' }, 'S', '<cmd>HopLine<cr>', { desc = 'Jump to line' })
--- map({ 'n', 'v' }, 's', '<cmd>HopChar2<cr>', { desc = 'Jump to 2 characters' })
+map({ 'n', 'v' }, '<leader>gdm', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff [M]ain' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
