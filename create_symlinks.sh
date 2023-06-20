@@ -6,11 +6,6 @@ read answer
 
 if [ $answer == "yes" ]; then
 
-    DOTFILES_REPO="~/dotfiles"
-    PATH_VIMRC="$HOME/.vimrc"
-    PATH_TMUX="~/.tmux.conf"
-    DOTCONFIG="~/.config/"
-
     # create the symlinks
     ln -sf ~/dotfiles/vimrc ~/.vimrc
     ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
