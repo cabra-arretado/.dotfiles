@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 echo "Do you want create the symlinks?"
 echo "type yes"
