@@ -119,6 +119,10 @@ return require('lazy').setup({
     "github/copilot.vim",
     lazy = false,
     priority = 999,
-  }
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    event = "VeryLazy",
+  },
 }
 )

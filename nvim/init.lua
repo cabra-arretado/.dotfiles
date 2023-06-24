@@ -20,7 +20,7 @@ require('term-setup')
 require('diversos-setup')
 
 opt.number = true
-opt.relativenumber = true
+-- opt.relativenumber = true
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.cursorline = true
 opt.splitright = true
