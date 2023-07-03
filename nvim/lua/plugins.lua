@@ -43,8 +43,8 @@ return require('lazy').setup({
   },
   {
     'j-hui/fidget.nvim',
-    opts = {},
-    tag = "legacy"
+    tag = 'legacy',
+    opts = {}
   },
   { 'nvim-treesitter/nvim-treesitter' },
   { 'nvim-lua/plenary.nvim' },
@@ -115,10 +115,14 @@ return require('lazy').setup({
       "MunifTanjim/nui.nvim",
     },
   },
-  -- {
-  --   "github/copilot.vim",
-  --   lazy = false,
-  --   priority = 999,
-  -- }
+  {
+    "github/copilot.vim",
+    lazy = false,
+    priority = 999,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    event = "VeryLazy",
+  },
 }
 )

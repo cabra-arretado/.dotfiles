@@ -11,15 +11,21 @@ local map = function(modes, lhs, rhs, opts)
   vim.keymap.set(modes, lhs, rhs, options)
 end
 
+
+-- Overwrite the :w to call the function Save_file()
+vim.cmd("command! W lua Save_file()")
+vim.cmd[[cnoreabbrev w W]]
+
+
 --General
 map({ 'n', 'v', 't' }, ';', ':')
 map({ 'n', 'v', 't' }, '&', '<cmd>noh<cr>')
 map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration' }) --  Register registration
 map('i', 'jk', '<Esc>')
 map('i', 'JK', '<Esc>')
-map('n', '<C-s>', '<cmd>w<cr>', { desc = 'Salve Buffer' })
 map('n', '<C-c>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
 map({ 'n', 'v' }, ',', '<Esc>,')
+map({'n', 'v'}, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 
 -- Moving
@@ -96,8 +102,3 @@ map({ 'n', 'v' }, 'B', function()
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
-
--- removes tab as a completion key for copilot
--- vim.cmd[[let g:copilot_no_tab_map = v:true]]
--- vim.cmd[[imap <silent><script><expr> <M-Space> copilot#Accept("\<CR>")]]
-
