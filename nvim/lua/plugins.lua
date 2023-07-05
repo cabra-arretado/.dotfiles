@@ -124,5 +124,6 @@ return require('lazy').setup({
     "rebelot/kanagawa.nvim",
     event = "VeryLazy",
   },
+  { 'RRethy/vim-illuminate' },
 }
 )
