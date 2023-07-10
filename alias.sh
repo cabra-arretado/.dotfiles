@@ -119,9 +119,7 @@ fi
 
 # Create or attach to a tmux session on startup
 if ! [[ $TMUX ]] ; then
-    tmux new -s "Main"
-else
-    tmux attach -t "Main"
+    tmux new -s "main"
 fi
 
 # fzf stuff
