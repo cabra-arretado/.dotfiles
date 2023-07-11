@@ -10,13 +10,13 @@ api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank({ timeout = 300 }) end
 })
 
--- Lua formatting
+-- Python formatting
 api.nvim_create_autocmd("FileType", {
   group = myGroup,
-  pattern = 'lua',
+  pattern = {'python'},
   callback = function()
-    vim.bo[0].expandtab = true
-    vim.bo[0].shiftwidth = 2
+    vim.bo[0].expandtab = false
+    vim.bo[0].shiftwidth = 4
   end
 })
 

@@ -34,7 +34,8 @@ opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
 opt.laststatus = 3
-opt.shiftwidth = 4
+opt.expandtab = true
+opt.shiftwidth = 2
 opt.list = true
 -- opt.listchars:append "eol:↵" -- other options( ↩ , ↴ , ↵ )
 opt.listchars:append "trail:·"
