@@ -29,4 +29,3 @@ require('todo-comments').setup({
     after = "",                    -- "fg" or "bg" or empty
   },
 })
--- require'alpha'.setup(require'alpha.themes.dashboard'.config)
