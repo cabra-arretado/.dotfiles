@@ -87,22 +87,6 @@ return require('lazy').setup({
       'L3MON4D3/LuaSnip',
     },
   },
-  -- {
-  --   'goolord/alpha-nvim',
-  --   event = "VimEnter",
-  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  -- },
-  {
-  'glepnir/dashboard-nvim',
-  event = 'VimEnter',
-  opts = {},
-  -- config = function()
-  --   require('dashboard').setup {
-  --     -- config
-  --   }
-  -- end,
-  dependencies = {'nvim-tree/nvim-web-devicons'}
-  },
   {
     'akinsho/toggleterm.nvim',
     lazy = true
