@@ -11,7 +11,6 @@ local map = function(modes, lhs, rhs, opts)
   vim.keymap.set(modes, lhs, rhs, options)
 end
 
-
 -- Overwrite the :w to call the function Save_file()
 vim.cmd("command! W lua Save_file()")
 vim.cmd[[cnoreabbrev w W]]

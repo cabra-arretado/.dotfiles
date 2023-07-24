@@ -168,5 +168,6 @@ return require('lazy').setup({
       enable = true,
     },
   },
+  { "folke/neodev.nvim", opts = {} },
 }
 )
