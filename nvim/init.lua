@@ -37,7 +37,7 @@ opt.laststatus = 3
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.list = true
--- opt.listchars:append "eol:↵" -- other options( ↩ , ↴ , ↵ )
+-- opt.listchars:append "eol:↴" -- other options( ↩ , ↴ , ↵ )
 opt.listchars:append "trail:·"
 opt.breakindent = true
 opt.linebreak = true

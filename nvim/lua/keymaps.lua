@@ -44,7 +44,7 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Neotree
-map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle float reveal<cr>', { desc = '[N]eotree' })
+map({ 'n', 'v' }, '<leader>n', '<cmd>Neotree toggle left reveal<cr>', { desc = '[N]eotree' })
 map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', { desc = '[S]earch [B]uffers' })
 
 -- Telescope
