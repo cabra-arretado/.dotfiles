@@ -169,5 +169,9 @@ return require('lazy').setup({
     },
   },
   { "folke/neodev.nvim", opts = {} },
+  {
+    "folke/zen-mode.nvim",
+    opts = {}
+  }
 }
 )

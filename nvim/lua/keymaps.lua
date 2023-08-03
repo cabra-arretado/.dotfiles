@@ -89,15 +89,15 @@ map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, {
 map({ 'n', 't', 'v' }, '<leader>t', '<cmd>ToggleTerm size=40<cr>')
 map('t', ':q', '<cmd>ToggleTerm size=40<cr>')
 
--- -- Hop
+-- Git
 map({ 'n', 'v' }, '<leader>gdm', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff [M]ain' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
 
--- TODO: test for the buffer change
 map({ 'n', 'v' }, 'B', function()
   telescope_builtin.buffers(require('telescope.themes').get_dropdown {
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
+map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
