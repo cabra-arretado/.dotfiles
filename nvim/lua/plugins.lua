@@ -154,7 +154,27 @@ return require('lazy').setup({
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
     config = function()
-      require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+      local alpha = require 'alpha'
+      local dashboard = require 'alpha.themes.dashboard'
+      dashboard.section.header.val = {
+        [[            _                                             _           ]],
+        [[  __ _  ___| |_ __ _   _ __   ___  _ __   __   _____ _ __| |__   __ _ ]],
+        [[ / _` |/ __| __/ _` | | '_ \ / _ \| '_ \  \ \ / / _ \ '__| '_ \ / _` |]],
+        [[| (_| | (__| || (_| | | | | | (_) | | | |  \ V /  __/ |  | |_) | (_| |]],
+        [[ \__,_|\___|\__\__,_| |_| |_|\___/|_| |_|   \_/ \___|_|  |_.__/ \__,_|]],
+        [[                                                                      ]],
+      }
+      dashboard.section.buttons.val = {
+        dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+        dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+      }
+      require'alpha.themes.dashboard'.section.footer.val = require'alpha.fortune'()
+
+      dashboard.config.opts.noautocmd = true
+
+      vim.cmd [[autocmd User AlphaReady echo 'ready']]
+
+      alpha.setup(dashboard.config)
     end
   },
   {
