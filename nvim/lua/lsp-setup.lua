@@ -136,7 +136,7 @@ lspconfig['pylsp'].setup {
   },
 }
 
-local default_lsp = { 'tsserver', 'omnisharp', 'gopls' }
+local default_lsp = { 'tsserver', 'omnisharp', 'gopls', 'rust_analyzer' }
 for _, lsp in pairs(default_lsp) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
