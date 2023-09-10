@@ -1,5 +1,5 @@
 # Dotfiles alias
-DOTPATH="$HOME/.dotfiles"
+DOTPATH="$HOME/dotfiles"
 alias dotfiles="cd $DOTPATH"
 
 # Alias Git
