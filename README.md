@@ -1,8 +1,8 @@
 # Cabra-arretado Dotfiles
 This dotifles contain the MacOS configurations for:
-* Neovim
 * Vim
-* Tmux
+* [Neovim](https://neovim.io)
+* [Tmux](https://github.com/tmux/tmux/wiki)
 * Shell aliases (Bash or Zsh required)
 
 ## Setup
