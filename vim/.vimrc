@@ -1,7 +1,3 @@
-" THIS IS A SYMLINK FROM ~/dotfiles/
-" IF YOU DESIRE THE OLD .vimrc look into the .original_dotfiles
-" Felipe M. - .vimrc
-"
 "KEEPING THE REMAPS FOR THE VSCODE PLUGIN
 "######################
 "### MAIN CONFIG ######
