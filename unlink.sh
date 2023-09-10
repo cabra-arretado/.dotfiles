@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Create symlinks to be managed by Stow
+# Remove symlinks managed by Stow
 
 links=(
   vim
@@ -10,5 +10,6 @@ links=(
 
 for i in "${links[@]}"
 do
-    stow $i
+    stow -D $i
 done
+
