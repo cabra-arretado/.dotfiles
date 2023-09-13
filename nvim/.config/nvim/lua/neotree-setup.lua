@@ -5,6 +5,11 @@ if not present then
 end
 
 neotree.setup({
+  filesystem = {
+    filtered_items = {
+      visible = true,
+    },
+  },
   source_selector = {
     winbar = true,
     content_layout = "center",
