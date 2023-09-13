@@ -46,7 +46,7 @@ g.maplocalleader = '\\'
 g.markdown_remmended_style = 0
 
 -- Theme
-local theme = [[tokyonight]]
+local theme = [[kanagawa]]
 cmd.colorscheme(theme)
 
 
