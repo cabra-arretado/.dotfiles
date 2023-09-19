@@ -34,6 +34,8 @@ map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>')
 map({ 'n', 'v' }, 'K', '<C-b>')
+map({ 'n', 'v' }, 'H', '{{')
+map({ 'n', 'v' }, 'L', '}}')
 
 -- Buffer control
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
