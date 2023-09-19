@@ -27,9 +27,13 @@ map({ 'n', 'v' }, ',', '<Esc>,')
 map({'n', 'v'}, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 
--- This in case I don't want the clipboard to unnamedplus
+-- ThePrimagean
 map({"n", "v"}, "<leader>y", [["+y]])  -- Copies selected to the system clipboard
 map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
+map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
+-- map("x", "<leader>p", [["_dP]]) -- Paste under curser in Terminal mode
+map("n", "n", "nzzzv") -- Improved n
+map("n", "N", "Nzzzv") -- Improved N
 
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>')
@@ -55,7 +59,7 @@ map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', 
 -- Telescope
 local telescope_builtin = require('telescope.builtin')
 
-map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
+-- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
 map({ 'n', 'v' }, '<C-p>', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
 map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
