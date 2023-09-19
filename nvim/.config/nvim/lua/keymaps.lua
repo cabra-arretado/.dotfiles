@@ -27,6 +27,10 @@ map({ 'n', 'v' }, ',', '<Esc>,')
 map({'n', 'v'}, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 
+-- This in case I don't want the clipboard to unnamedplus
+map({"n", "v"}, "<leader>y", [["+y]])  -- Copies selected to the system clipboard
+map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
+
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>')
 map({ 'n', 'v' }, 'K', '<C-b>')
