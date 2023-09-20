@@ -46,14 +46,23 @@ noremap ; :
 inoremap jk <Esc>
 inoremap JK <Esc>
 nmap <C-s> :w<cr>
-nmap <F9> :w<cr>:!pipenv run python3 %<cr>
 vmap <C-y> <cmd>'<,'>*y<cr>
 
 "" move
 nnoremap J <C-f>
 nnoremap K <C-b>
+nnoremap H {{
+nnoremap L }}
+
 vnoremap J <C-f>
 vnoremap K <C-b>
+vnoremap H {{
+vnoremap L }}
+
+"" new ones
+nmap <leader>ss :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nmap n nzzzv
+nmap N Nzzzv
 
 "" buffer/tab control
 nmap <Tab><Tab> <esc><C-w><C-w>
