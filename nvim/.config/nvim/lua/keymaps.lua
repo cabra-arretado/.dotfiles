@@ -38,8 +38,8 @@ map("n", "N", "Nzzzv") -- Improved N
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>')
 map({ 'n', 'v' }, 'K', '<C-b>')
-map({ 'n', 'v' }, 'H', '{{')
-map({ 'n', 'v' }, 'L', '}}')
+map({ 'n', 'v' }, 'H', '{')
+map({ 'n', 'v' }, 'L', '}')
 
 -- Buffer control
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })

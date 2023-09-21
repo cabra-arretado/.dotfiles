@@ -56,8 +56,13 @@ nnoremap L }}
 
 vnoremap J <C-f>
 vnoremap K <C-b>
-vnoremap H {{
-vnoremap L }}
+vnoremap H {
+vnoremap L }
+
+"" Better ident in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
 
 "" new ones
 nmap <leader>ss :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
