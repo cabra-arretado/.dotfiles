@@ -19,6 +19,9 @@ require('cmp-setup')
 require('term-setup')
 require('diversos-setup')
 
+-- Changes the cursor in insert mode
+-- opt.guicursor = ''
+
 opt.number = true
 -- opt.relativenumber = true
 opt.shortmess:append({ W = true, I = true, c = true })
