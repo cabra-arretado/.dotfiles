@@ -58,7 +58,7 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local to_install = { 'pylsp', 'tsserver' }
+local to_install = { 'pylsp', 'tsserver', 'gopls', 'rust_analyzer' }
 
 require("mason").setup({})
 

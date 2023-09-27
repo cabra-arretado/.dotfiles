@@ -109,5 +109,8 @@ map({ 'n', 'v' }, 'B', function()
   telescope_builtin.buffers(require('telescope.themes').get_dropdown {
     previewer = false
   })
-end, { desc = '[/] Fuzzy find in the current buffer]' })
+end, { desc = 'Select [B]uffers' })
+
 map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
+
+-- TODO: To change the Copilot to use <S-Tab> to trigger the completion
