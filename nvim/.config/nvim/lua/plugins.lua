@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
@@ -58,23 +59,24 @@ return require('lazy').setup({
   { 'akinsho/bufferline.nvim' },
   { 'nvim-lualine/lualine.nvim' },
   { 'nvim-tree/nvim-web-devicons' },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      char = "│",
-      filetype_exclude = {
-        "help",
-        "neo-tree",
-        "lazy",
-        "mason",
-        "notify",
-        "toggleterm",
-      },
-      show_trailing_blankline_indent = false,
-      show_current_context = false,
-    },
-  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = { "BufReadPost", "BufNewFile" },
+  --   opts = {
+  --     char = "│",
+  --     filetype_exclude = {
+  --       "help",
+  --       "neo-tree",
+  --       "lazy",
+  --       "mason",
+  --       "notify",
+  --       "toggleterm",
+  --     },
+  --     show_trailing_blankline_indent = false,
+  --     show_current_context = false,
+  --   },
+  -- },
   {
     'hrsh7th/nvim-cmp',
     lazy = true,
@@ -150,7 +152,7 @@ return require('lazy').setup({
     priority = 999,
   },
   {
-    -- TODO: Cconfigure this to a nice open screen
+    -- TODO: Configure this to a nice open screen
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons' },
     config = function()
