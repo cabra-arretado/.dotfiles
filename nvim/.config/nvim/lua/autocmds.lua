@@ -15,6 +15,7 @@ api.nvim_create_autocmd("FileType", {
   group = myGroup,
   pattern = {'python'},
   callback = function()
+    print("python autocmd")
     vim.bo[0].expandtab = false
     vim.bo[0].shiftwidth = 4
   end
