@@ -101,7 +101,7 @@ szsh()
 # Opens alias.sh in the editor
 aliasconfig()
 {
-    nvim $HOME/dotfiles/alias.sh
+    nvim $HOME/dotfiles/aliases.sh
     szsh
 }
 
