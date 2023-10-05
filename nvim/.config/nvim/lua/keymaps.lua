@@ -30,7 +30,7 @@ map({ 'n' }, 'U', 'C-r>')
 -- ThePrimagean
 map({"n", "v"}, "<leader>y", [["+y]])  -- Copies selected to the system clipboard
 map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
-map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
+map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
 -- map("x", "<leader>p", [["_dP]]) -- Paste under curser in Terminal mode
 map("n", "n", "nzzzv") -- Improved n
 map("n", "N", "Nzzzv") -- Improved N
@@ -60,12 +60,12 @@ map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', 
 local telescope_builtin = require('telescope.builtin')
 
 -- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
-map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
+map({ 'n', 'v' }, '<leader>ff', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
+map({ 'n', 'v' }, '<leader>sf', telescope_builtin.git_files, { desc = '[F]ind [F]iles the Original' })
 map({ 'n', 'v' }, '<C-p>', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
-map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
+map({ 'n', 'v' }, '<leader>fw', telescope_builtin.live_grep, { desc = '[F]ind in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
 map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
-map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[S]earch [G]it Files' })
 map({ 'n', 'v' }, '<leader>sr', telescope_builtin.registers, { desc = '[S]earch [R]egisters' })
 map({ 'n', 'v' }, '<leader>sj', telescope_builtin.jumplist, { desc = '[S]earch [J]umplist' })
 map({ 'n', 'v' }, '<leader>gc', telescope_builtin.git_commits, { desc = '[G]it [C]ommits' })

@@ -101,7 +101,20 @@ return require('lazy').setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      views = {
+        cmdline_popup = {
+          border = {
+            style = "none",
+            padding = { 2, 3 },
+          },
+          filter_options = {},
+          win_options = {
+            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+          },
+        },
+      },
+    },
     dependencies = {
       "MunifTanjim/nui.nvim",
     }
@@ -170,7 +183,7 @@ return require('lazy').setup({
         dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
         dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
       }
-      require'alpha.themes.dashboard'.section.footer.val = require'alpha.fortune'()
+      require 'alpha.themes.dashboard'.section.footer.val = require 'alpha.fortune' ()
 
       dashboard.config.opts.noautocmd = true
 
@@ -190,7 +203,10 @@ return require('lazy').setup({
       enable = true,
     },
   },
-  { "folke/neodev.nvim", opts = {} },
+  {
+    "folke/neodev.nvim",
+    opts = {}
+  },
   {
     "folke/zen-mode.nvim",
     opts = {}
