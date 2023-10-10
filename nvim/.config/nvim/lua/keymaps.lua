@@ -113,4 +113,6 @@ end, { desc = 'Select [B]uffers' })
 
 map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 
--- TODO: To change the Copilot to use <S-Tab> to trigger the completion
+-- Copilot keymaps, here for lack of better place
+vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
+vim.cmd([[let g:copilot_no_tab_map = v:true]])
