@@ -18,6 +18,7 @@ vim.cmd[[cnoreabbrev w W]]
 
 --General
 map({ 'n', 'v', 't' }, ';', ':')
+map({ 'n', 'v', 't' }, "'", ',')
 map({ 'n', 'v', 't' }, '&', '<cmd>noh<cr>')
 map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration' }) --  Register registration
 map('i', 'jk', '<Esc>')
@@ -75,7 +76,7 @@ map({ 'n', 'v' }, '<leader>km', telescope_builtin.keymaps, { desc = '[K]ey[m]aps
 map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neovim' })
 map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>cs', telescope_builtin.colorscheme, { desc = 'Change colorscheme' })
-map({ 'n', 'v' }, '<leader>d', '<cmd>TodoTelescope<cr>', { desc = '[T]o[D]o List' })
+map({ 'n', 'v' }, '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odo' })
 map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
 map({ 'n', 'v' }, '<leader>/', function()
   telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
