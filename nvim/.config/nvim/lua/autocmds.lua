@@ -1,37 +1,50 @@
 local api = vim.api -- access the VIM Lua API
 local autogroup = function(name)
-  return api.nvim_create_augroup("CreatedByMe__" .. name, {clear = true})
+  return api.nvim_create_augroup("FM: " .. name, { clear = true })
 end
 
-local myGroup = autogroup('general')
+local general = autogroup('general')
+local format = autogroup('format')
 -- Highlight on yank
 api.nvim_create_autocmd("TextYankPost", {
-  group = myGroup,
+  group = general,
   callback = function() vim.highlight.on_yank({ timeout = 300 }) end
 })
 
--- Python formatting
-api.nvim_create_autocmd("FileType", {
-  group = myGroup,
-  pattern = {'python'},
+-- resize splits if window got resized
+vim.api.nvim_create_autocmd({ "VimResized" }, {
+  group = general,
   callback = function()
-    print("python autocmd")
+    vim.cmd("tabdo wincmd =")
+  end,
+})
+
+-- Python files
+api.nvim_create_autocmd("FileType", {
+  group = format,
+  pattern = { 'python' },
+  callback = function()
     -- vim.bo[0].expandtab = false
     vim.bo[0].shiftwidth = 4
   end
 })
 
--- TS to work with Terraform files
+-- Terraform files
 api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  group = myGroup,
+  group = format,
   pattern = '*.tf',
   command = [[set filetype=hcl]]
 })
 
--- resize splits if window got resized
-vim.api.nvim_create_autocmd({ "VimResized" }, {
-  group = myGroup,
+-- Go files
+api.nvim_create_autocmd("FileType", {
+  group = format,
+  pattern = { 'go' },
   callback = function()
-    vim.cmd("tabdo wincmd =")
-  end,
+    vim.bo[0].expandtab = false
+    vim.bo[0].shiftwidth = 4
+    vim.bo[0].softtabstop = 4
+    vim.bo[0].tabstop = 4
+  end
 })
+
