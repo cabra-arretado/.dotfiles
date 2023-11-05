@@ -60,9 +60,6 @@ cmp.setup {
     { name = 'path' },
     { name = 'nvim_lsp_signature_help' }
   }),
-  completion = {
-    keyword_length = 3,
-  }
 }
 
 -- `/` cmdline setup.
