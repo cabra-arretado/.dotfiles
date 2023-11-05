@@ -19,6 +19,7 @@ return require('lazy').setup({
     priority = 1000,
     opts = {},
   },
+  { 'mbbill/undotree' },
   {
     'rcarriga/nvim-notify',
     lazy = false,
