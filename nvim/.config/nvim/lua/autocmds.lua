@@ -4,7 +4,7 @@ local autogroup = function(name)
 end
 
 local general = autogroup('general')
-local format = autogroup('format')
+
 -- Highlight on yank
 api.nvim_create_autocmd("TextYankPost", {
   group = general,
@@ -19,32 +19,9 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
 })
 
--- Python files
-api.nvim_create_autocmd("FileType", {
-  group = format,
-  pattern = { 'python' },
-  callback = function()
-    -- vim.bo[0].expandtab = false
-    vim.bo[0].shiftwidth = 4
-  end
-})
-
 -- Terraform files
 api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-  group = format,
+  group = general,
   pattern = '*.tf',
   command = [[set filetype=hcl]]
 })
-
--- Go files
-api.nvim_create_autocmd("FileType", {
-  group = format,
-  pattern = { 'go' },
-  callback = function()
-    vim.bo[0].expandtab = false
-    vim.bo[0].shiftwidth = 4
-    vim.bo[0].softtabstop = 4
-    vim.bo[0].tabstop = 4
-  end
-})
-

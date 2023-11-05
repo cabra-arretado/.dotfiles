@@ -7,5 +7,3 @@ Just make sure to use the local (or buffer) options if you change any config. Li
 ```local opt = vim.opt_local```
 instead of
 ``` local opt = vim.opt```
-
-
