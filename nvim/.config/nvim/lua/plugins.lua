@@ -31,12 +31,12 @@ return require('lazy').setup({
   },
   { 'lewis6991/gitsigns.nvim' },
   { 'tpope/vim-fugitive' },
-  {
-    'tpope/vim-commentary',
-  },
+  { 'tpope/vim-commentary' },
   { 'christoomey/vim-tmux-navigator', },
   {
     'neovim/nvim-lspconfig',
+    -- TODO: LSPzero update
+    -- https://github.com/VonHeikemen/lsp-zero.nvim
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
@@ -60,6 +60,7 @@ return require('lazy').setup({
   { 'nvim-lualine/lualine.nvim' },
   { 'nvim-tree/nvim-web-devicons' },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  -- TODO: Create a config file if necessary
   -- {
   --   "lukas-reineke/indent-blankline.nvim",
   --   event = { "BufReadPost", "BufNewFile" },
@@ -165,40 +166,13 @@ return require('lazy').setup({
     priority = 999,
   },
   {
-    -- TODO: Configure this to a nice open screen
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      local alpha = require 'alpha'
-      local dashboard = require 'alpha.themes.dashboard'
-      -- dashboard.section.header.val = {
-      --   [[            _                                             _           ]],
-      --   [[  __ _  ___| |_ __ _   _ __   ___  _ __   __   _____ _ __| |__   __ _ ]],
-      --   [[ / _` |/ __| __/ _` | | '_ \ / _ \| '_ \  \ \ / / _ \ '__| '_ \ / _` |]],
-      --   [[| (_| | (__| || (_| | | | | | (_) | | | |  \ V /  __/ |  | |_) | (_| |]],
-      --   [[ \__,_|\___|\__\__,_| |_| |_|\___/|_| |_|   \_/ \___|_|  |_.__/ \__,_|]],
-      --   [[                                                                      ]],
-      -- }
-      dashboard.section.buttons.val = {
-        dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
-      }
-      require 'alpha.themes.dashboard'.section.footer.val = require 'alpha.fortune' ()
-
-      dashboard.config.opts.noautocmd = true
-
-      vim.cmd [[autocmd User AlphaReady echo 'ready']]
-
-      alpha.setup(dashboard.config)
-    end
-  },
-  {
     "rebelot/kanagawa.nvim",
     event = "VeryLazy",
   },
   { 'RRethy/vim-illuminate' },
   {
-    "nvim-treesitter/nvim-treesitter-context", -- testing this out
+    -- TODO: Finish to test this out
+    "nvim-treesitter/nvim-treesitter-context",
     opts = {
       enable = true,
     },

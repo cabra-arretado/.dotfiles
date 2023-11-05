@@ -3,10 +3,12 @@
 local default_only_plugins = { 'gitsigns' }
 
 -- Setup Plugins just with default setup
+-- TODO: Protect the calls here
 for _, plugin in ipairs(default_only_plugins) do
   require(plugin).setup({})
 end
 
+-- TODO: Protect the calls here
 require('todo-comments').setup({
   keywords = {
     FIX = {
