@@ -13,7 +13,7 @@ end
 
 -- Overwrite the :w to call the function Save_file()
 vim.cmd("command! W lua Save_file()")
-vim.cmd[[cnoreabbrev w W]]
+vim.cmd [[cnoreabbrev w W]]
 
 
 --General
@@ -25,16 +25,16 @@ map('i', 'jk', '<Esc>')
 map('i', 'JK', '<Esc>')
 map('n', '<C-c>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
 map({ 'n', 'v' }, ',', '<Esc>,')
-map({'n', 'v'}, '<C-s>', Save_file, { desc = 'Salve Buffer' })
+map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 
 -- ThePrimagean
-map({"n", "v"}, "<leader>y", [["+y]])  -- Copies selected to the system clipboard
-map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
+map({ "n", "v" }, "<leader>y", [["+y]])                                       -- Copies selected to the system clipboard
+map("n", "<leader>Y", [["+Y]])                                                -- Copies line to the system clipboard
 map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
 -- map("x", "<leader>p", [["_dP]]) -- Paste under curser in Terminal mode
-map("n", "n", "nzzzv") -- Improved n
-map("n", "N", "Nzzzv") -- Improved N
+map("n", "n", "nzzzv")                                                        -- Improved n
+map("n", "N", "Nzzzv")                                                        -- Improved N
 
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>')
@@ -101,7 +101,7 @@ map({ 'n', 't', 'v' }, '<leader>t', '<cmd>ToggleTerm size=40<cr>')
 map('t', ':q', '<cmd>ToggleTerm size=40<cr>')
 
 -- Git
-map({ 'n', 'v' }, '<leader>gdm', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff [M]ain' })
+map({ 'n', 'v' }, '<localleader>gd', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff Main' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
@@ -114,6 +114,9 @@ end, { desc = 'Select [B]uffers' })
 
 map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 
+
+
+
 -- Copilot keymaps, here for lack of better place
-vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
-vim.cmd([[let g:copilot_no_tab_map = v:true]])
+-- vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
+-- vim.cmd([[let g:copilot_no_tab_map = v:true]])
