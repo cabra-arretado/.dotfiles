@@ -13,12 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
   { 'mbbill/undotree' },
   {
     'rcarriga/nvim-notify',
@@ -89,6 +89,7 @@ return require('lazy').setup({
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
     },
   },
   {

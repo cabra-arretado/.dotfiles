@@ -7,6 +7,8 @@ if not ok then
   return
 end
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 local types = require("luasnip.util.types")
 
 luasnip.config.set_config {
