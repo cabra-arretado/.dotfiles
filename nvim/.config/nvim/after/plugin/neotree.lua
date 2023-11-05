@@ -1,6 +1,6 @@
-local present, neotree = pcall(require, "neo-tree")
+local ok, neotree = pcall(require, "neo-tree")
 
-if not present then
+if not ok then
   return
 end
 
