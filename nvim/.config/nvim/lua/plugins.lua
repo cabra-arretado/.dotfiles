@@ -171,14 +171,14 @@ return require('lazy').setup({
     config = function()
       local alpha = require 'alpha'
       local dashboard = require 'alpha.themes.dashboard'
-      dashboard.section.header.val = {
-        [[            _                                             _           ]],
-        [[  __ _  ___| |_ __ _   _ __   ___  _ __   __   _____ _ __| |__   __ _ ]],
-        [[ / _` |/ __| __/ _` | | '_ \ / _ \| '_ \  \ \ / / _ \ '__| '_ \ / _` |]],
-        [[| (_| | (__| || (_| | | | | | (_) | | | |  \ V /  __/ |  | |_) | (_| |]],
-        [[ \__,_|\___|\__\__,_| |_| |_|\___/|_| |_|   \_/ \___|_|  |_.__/ \__,_|]],
-        [[                                                                      ]],
-      }
+      -- dashboard.section.header.val = {
+      --   [[            _                                             _           ]],
+      --   [[  __ _  ___| |_ __ _   _ __   ___  _ __   __   _____ _ __| |__   __ _ ]],
+      --   [[ / _` |/ __| __/ _` | | '_ \ / _ \| '_ \  \ \ / / _ \ '__| '_ \ / _` |]],
+      --   [[| (_| | (__| || (_| | | | | | (_) | | | |  \ V /  __/ |  | |_) | (_| |]],
+      --   [[ \__,_|\___|\__\__,_| |_| |_|\___/|_| |_|   \_/ \___|_|  |_.__/ \__,_|]],
+      --   [[                                                                      ]],
+      -- }
       dashboard.section.buttons.val = {
         dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
         dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),

@@ -1,6 +1,6 @@
-local present, lualine = pcall(require, "lualine")
+local ok, lualine = pcall(require, "lualine")
 
-if not present then
+if not ok then
   return
 end
 
