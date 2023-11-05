@@ -5,7 +5,7 @@ end
 
 treesitter.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = { "python", "lua", "dot", "json", "bash",
+  ensure_installed = { "vimdoc", "diff", "python", "lua", "dot", "json", "bash",
     "dockerfile", "yaml", "hcl", "javascript", "typescript", "go",
     "c_sharp", "rust" },
   auto_install = true,

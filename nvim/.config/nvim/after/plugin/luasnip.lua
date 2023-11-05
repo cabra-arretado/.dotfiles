@@ -73,3 +73,11 @@ local c = luasnip.choice_node
 
 local d = luasnip.dynamic_node
 
+luasnip.snippets = {
+  all = {
+    --All file types
+    luasnip.parser.parse_snippet("expand", "-- This is what was spanded")
+  },
+  lua = {
+  }
+}
