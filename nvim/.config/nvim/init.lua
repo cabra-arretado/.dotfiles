@@ -9,15 +9,6 @@ g.maplocalleader = '\\'
 
 require('globals')
 require('plugins')
-require('telescope-setup')
-require('treesitter-setup')
-require('neotree-setup')
-require('bufferline-setup')
-require('lualine-setup')
-require('lsp-setup')
-require('cmp-setup')
-require('term-setup')
-require('diversos-setup')
 
 -- Changes the cursor in insert mode
 -- opt.guicursor = ''

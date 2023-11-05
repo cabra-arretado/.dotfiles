@@ -1,5 +1,5 @@
-local present, lspconfig = pcall(require, "lspconfig")
-if not present then
+local ok, lspconfig = pcall(require, "lspconfig")
+if not ok then
   return
 end
 
