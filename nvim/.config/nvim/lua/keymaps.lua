@@ -28,7 +28,7 @@ map({ 'n', 'v' }, ',', '<Esc>,')
 map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
-map('x', "<leader>d", [["_d]])
+map({'v', 'n'}, "<leader>d", [["_d]])
 
 -- ThePrimagean
 map({ "n", "v" }, "<leader>y", [["+y]])                                       -- Copies selected to the system clipboard

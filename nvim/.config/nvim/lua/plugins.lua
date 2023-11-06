@@ -13,12 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
   { 'mbbill/undotree' },
   {
     'rcarriga/nvim-notify',
@@ -174,10 +168,6 @@ return require('lazy').setup({
     lazy = false,
     priority = 999,
   },
-  {
-    "rebelot/kanagawa.nvim",
-    event = "VeryLazy",
-  },
   { 'RRethy/vim-illuminate' },
   {
     -- TODO: Finish to test this out
@@ -193,6 +183,21 @@ return require('lazy').setup({
   {
     "folke/zen-mode.nvim",
     opts = {}
-  }
+  },
+  {
+    "rebelot/kanagawa.nvim",
+  },
+  ---------------------------------------------------
+  -- THEMES NOT USED
+  --
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
+  -- { 'rose-pine/neovim', name = 'rose-pine' },
+  --
+  ---------------------------------------------------
 }
 )

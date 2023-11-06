@@ -33,6 +33,7 @@ luasnip.config.set_config {
   },
 }
 
+
 -- create snippet
 -- s(context, nodes, condition, ...)
 local snippet = luasnip.s
@@ -81,3 +82,9 @@ luasnip.snippets = {
   lua = {
   }
 }
+
+vim.keymap.set({ "i", "s" }, "<M-q>", function()
+  if luasnip.expand_or_jumpable() then
+    luasnip.expand_or_jump()
+  end
+end, { silent = true })

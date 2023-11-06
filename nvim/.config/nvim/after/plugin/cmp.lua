@@ -8,6 +8,7 @@ if not l_present then
   return
 end
 
+
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 -- Global setup.
 cmp.setup {
@@ -31,6 +32,7 @@ cmp.setup {
     ["<M-Space>"] = cmp.mapping.complete(),
   }),
   sources = cmp.config.sources({
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
