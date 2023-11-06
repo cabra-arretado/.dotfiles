@@ -112,7 +112,10 @@ map({ 'n', 'v' }, 'B', function()
   })
 end, { desc = 'Select [B]uffers' })
 
-map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
+
+
+map({ 'v' }, '<M-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+map({ 'v' }, '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
 
 
 
