@@ -1,10 +1,10 @@
-local c_present, cmp = pcall(require, 'cmp')
-if not c_present then
+local cmp_ok, cmp = pcall(require, 'cmp')
+if not cmp_ok then
   return
 end
 
-local l_present, luasnip = pcall(require, 'luasnip')
-if not l_present then
+local ls_ok, ls = pcall(require, 'luasnip')
+if not ls_ok then
   return
 end
 
@@ -19,7 +19,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      ls.lsp_expand(args.body)
     end,
   },
   experimental = {
@@ -37,8 +37,8 @@ cmp.setup {
         cmp.select_next_item()
         -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
         -- that way you will only jump inside the snippet region
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+      elseif ls.expand_or_jumpable() then
+        ls.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
       else
@@ -49,8 +49,8 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      elseif ls.jumpable(-1) then
+        ls.jump(-1)
       else
         fallback()
       end
