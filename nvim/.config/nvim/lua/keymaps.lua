@@ -15,7 +15,6 @@ end
 vim.cmd("command! W lua Save_file()")
 vim.cmd [[cnoreabbrev w W]]
 
-
 --General
 map({ 'n', 'v', 't' }, ';', ':')
 map({ 'n', 'v', 't' }, "'", ',')
@@ -28,19 +27,18 @@ map({ 'n', 'v' }, ',', '<Esc>,')
 map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
-map({'v', 'n'}, "<leader>d", [["_d]])
+map({ 'v', 'n' }, "<leader>d", [["_d]])
 
 -- ThePrimagean
 map({ "n", "v" }, "<leader>y", [["+y]])                                       -- Copies selected to the system clipboard
 map("n", "<leader>Y", [["+Y]])                                                -- Copies line to the system clipboard
 map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
--- map("x", "<leader>p", [["_dP]]) -- Paste under curser in Terminal mode
 map("n", "n", "nzzzv")                                                        -- Improved n
 map("n", "N", "Nzzzv")                                                        -- Improved N
 
 -- Moving
-map({ 'n', 'v' }, 'J', '<C-f>')
-map({ 'n', 'v' }, 'K', '<C-b>')
+map({ 'n', 'v' }, 'J', '<C-f>zz')
+map({ 'n', 'v' }, 'K', '<C-b>zz')
 map({ 'n', 'v' }, 'H', '{')
 map({ 'n', 'v' }, 'L', '}')
 
@@ -48,7 +46,7 @@ map({ 'n', 'v' }, 'L', '}')
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
-map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- fmtodo: create function in lua that creates new buffer if the current is the one being deleted and is the last one
+map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) -- TODO: create function in lua that creates new buffer if the current is the one being deleted and is the last one
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- identing
@@ -114,12 +112,10 @@ map({ 'n', 'v' }, 'B', function()
   })
 end, { desc = 'Select [B]uffers' })
 
-
+map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 
 map({ 'v' }, '<M-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
 map({ 'v' }, '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
-
-
 
 
 -- Copilot keymaps, here for lack of better place

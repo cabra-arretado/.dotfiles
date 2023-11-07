@@ -83,8 +83,9 @@ luasnip.snippets = {
   }
 }
 
-vim.keymap.set({ "i", "s" }, "<M-q>", function()
+vim.keymap.set({ "i", "s" }, "<M-l>", function()
   if luasnip.expand_or_jumpable() then
     luasnip.expand_or_jump()
   end
 end, { silent = true })
+
