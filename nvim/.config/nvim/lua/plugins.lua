@@ -24,7 +24,10 @@ return require('lazy').setup({
     },
     init = function() vim.notify = require('notify') end
   },
-  { 'lewis6991/gitsigns.nvim' },
+  { 
+    'lewis6991/gitsigns.nvim',
+    opts = {}
+  },
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-commentary' },
   { 'christoomey/vim-tmux-navigator', },
