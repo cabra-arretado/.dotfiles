@@ -24,7 +24,7 @@ return require('lazy').setup({
     },
     init = function() vim.notify = require('notify') end
   },
-  { 
+  {
     'lewis6991/gitsigns.nvim',
     opts = {}
   },

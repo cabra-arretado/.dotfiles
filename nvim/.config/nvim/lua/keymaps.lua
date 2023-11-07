@@ -73,7 +73,7 @@ map({ 'n', 'v' }, '<leader>km', telescope_builtin.keymaps, { desc = '[K]ey[m]aps
 map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neovim' })
 map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>cs', telescope_builtin.colorscheme, { desc = 'Change colorscheme' })
-map({ 'n', 'v' }, '<leader>ft', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odo' })
+map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odo' })
 map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
 map({ 'n', 'v' }, '<leader>/', function()
   telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
