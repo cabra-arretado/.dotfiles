@@ -5,10 +5,12 @@ if not ok then
 end
 
 vim.keymap.set({ "i", "s" }, "<M-l>", function()
+  -- TODO: See if I can get that in the <C-;>
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true })
+
 
 -- local s = ls.snippet
 -- local sn = ls.snippet_node

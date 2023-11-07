@@ -79,6 +79,12 @@ return require('lazy').setup({
     }
   },
   {
+    'L3MON4D3/LuaSnip',
+    dependencies = {
+      { 'rafamadriz/friendly-snippets' },
+    }
+  },
+  {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     opts = {}
