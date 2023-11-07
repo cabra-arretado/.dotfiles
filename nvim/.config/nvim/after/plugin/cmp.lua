@@ -25,11 +25,12 @@ cmp.setup {
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
   },
+
   mapping = cmp.mapping.preset.insert({
     ['<M-k>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<M-j>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<M-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<M-Space>"] = cmp.mapping.complete(),
+    ['<M-i>'] = cmp.mapping.confirm({ select = true }),
+    -- ["<M-Space>"] = cmp.mapping.complete(),
   }),
   sources = cmp.config.sources({
     { name = 'luasnip' },

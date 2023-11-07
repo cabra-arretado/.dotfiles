@@ -81,12 +81,6 @@ map({ 'n', 'v' }, '<leader>/', function()
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
-map({ 'n', 'v' }, '<C-f>', function()
-  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    -- winblend = 10,
-    previewer = false
-  })
-end, { desc = '[/] Fuzzy find in the current buffer]' })
 map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, { desc = 'Show [A][L]erts (Notify)' })
 
 

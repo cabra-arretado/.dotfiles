@@ -4,7 +4,6 @@ P = function(value)
   return value
 end
 
-
 function Save_file()
   -- save file using vim.api
   vim.api.nvim_command('silent! w')
