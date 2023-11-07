@@ -29,7 +29,7 @@ map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
 map({ 'v', 'n' }, "<leader>d", [["_d]])
 
-map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'}) -- Search and replace the word under the cursor
+map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'})
 map("n", "n", "nzzzv")                                                        -- Improved n
 map("n", "N", "Nzzzv")                                                        -- Improved N
 
