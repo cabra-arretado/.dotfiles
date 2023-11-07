@@ -13,8 +13,7 @@ end
 
 -- Overwrite the :w to call the function Save_file()
 vim.cmd("command! W lua Save_file()")
-vim.cmd[[cnoreabbrev w W]]
-
+vim.cmd [[cnoreabbrev w W]]
 
 --General
 map({ 'n', 'v', 't' }, ';', ':')
@@ -25,28 +24,26 @@ map('i', 'jk', '<Esc>')
 map('i', 'JK', '<Esc>')
 map('n', '<C-c>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
 map({ 'n', 'v' }, ',', '<Esc>,')
-map({'n', 'v'}, '<C-s>', Save_file, { desc = 'Salve Buffer' })
+map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
+map('x', "<leader>p", [["_dP]])
+map({ 'v', 'n' }, "<leader>d", [["_d]])
 
--- ThePrimagean
-map({"n", "v"}, "<leader>y", [["+y]])  -- Copies selected to the system clipboard
-map("n", "<leader>Y", [["+Y]]) -- Copies line to the system clipboard
-map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
--- map("x", "<leader>p", [["_dP]]) -- Paste under curser in Terminal mode
-map("n", "n", "nzzzv") -- Improved n
-map("n", "N", "Nzzzv") -- Improved N
+map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'}) -- Search and replace the word under the cursor
+map("n", "n", "nzzzv")                                                        -- Improved n
+map("n", "N", "Nzzzv")                                                        -- Improved N
 
 -- Moving
-map({ 'n', 'v' }, 'J', '<C-f>')
-map({ 'n', 'v' }, 'K', '<C-b>')
+map({ 'n', 'v' }, 'J', '<C-f>zz')
+map({ 'n', 'v' }, 'K', '<C-b>zz')
 map({ 'n', 'v' }, 'H', '{')
 map({ 'n', 'v' }, 'L', '}')
 
--- Buffer control
+-- Buffer moving
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
-map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) --- fmtodo: create function in lua that creates new buffer if the current is the one being deleted and is the last one
+map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' })
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- identing
@@ -63,7 +60,7 @@ local telescope_builtin = require('telescope.builtin')
 -- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>ff', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
 map({ 'n', 'v' }, '<leader>sf', telescope_builtin.git_files, { desc = '[F]ind [F]iles the Original' })
-map({ 'n', 'v' }, '<C-k>', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
+map({ 'n', 'v' }, '<C-o>', telescope_builtin.find_files, { desc = '[S]earch [F]iles' })
 map({ 'n', 'v' }, '<leader>fw', telescope_builtin.live_grep, { desc = '[F]ind in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
 map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
@@ -84,12 +81,6 @@ map({ 'n', 'v' }, '<leader>/', function()
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
-map({ 'n', 'v' }, '<C-f>', function()
-  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    -- winblend = 10,
-    previewer = false
-  })
-end, { desc = '[/] Fuzzy find in the current buffer]' })
 map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, { desc = 'Show [A][L]erts (Notify)' })
 
 
@@ -101,7 +92,7 @@ map({ 'n', 't', 'v' }, '<leader>t', '<cmd>ToggleTerm size=40<cr>')
 map('t', ':q', '<cmd>ToggleTerm size=40<cr>')
 
 -- Git
-map({ 'n', 'v' }, '<leader>gdm', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff [M]ain' })
+map({ 'n', 'v' }, '<localleader>gd', '<cmd>Gitsigns diffthis origin/main<cr>', { desc = '[G]it [D]iff Main' })
 
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
@@ -114,6 +105,10 @@ end, { desc = 'Select [B]uffers' })
 
 map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 
+map({ 'v' }, '<M-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+map({ 'v' }, '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+
+
 -- Copilot keymaps, here for lack of better place
-vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
-vim.cmd([[let g:copilot_no_tab_map = v:true]])
+-- vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
+-- vim.cmd([[let g:copilot_no_tab_map = v:true]])

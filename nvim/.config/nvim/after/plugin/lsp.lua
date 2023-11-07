@@ -3,7 +3,12 @@ if not ok then
   return
 end
 
-local neodev_present, neodev = pcall(require, "neodev")
+local ok, lspzero = pcall(require, "lsp-zero")
+if not ok then
+  return
+end
+
+-- local neodev_present, neodev = pcall(require, "neodev")
 -- if not neodev_present then
 --   return
 -- end
@@ -25,31 +30,32 @@ local on_attach = function(client, bufnr)
   end
 
   local telescope = require('telescope.builtin')
-  lsp_map({'n', 'v'}, 'gD', vim.lsp.buf.declaration, '[G]o to [D]eclaration')
-  lsp_map({'n', 'v'}, 'gd', vim.lsp.buf.definition, '[G]o to [d]efinition')
-  lsp_map({'n', 'v'}, '<leader>k', vim.lsp.buf.hover, 'Hover over')
-  lsp_map({'n', 'v'}, 'gi', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
-  lsp_map({'n', 'v'}, '<space>kh', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
-  lsp_map({'n', 'v'}, '<space>wa', vim.lsp.buf.add_workspace_folder, 'Add Worspace Folder')
-  lsp_map({'n', 'v'}, '<space>wr', vim.lsp.buf.remove_workspace_folder, 'Remove Worspace Folder')
-  lsp_map({'n', 'v'}, '<space>wl', function()
+  lsp_map({ 'n', 'v' }, 'gD', vim.lsp.buf.declaration, '[G]o to [D]eclaration')
+  lsp_map({ 'n', 'v' }, 'gd', vim.lsp.buf.definition, '[G]o to [d]efinition')
+  lsp_map({ 'n', 'v' }, '<leader>k', vim.lsp.buf.hover, 'Hover over')
+  lsp_map({ 'n', 'v' }, 'gi', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
+  lsp_map({ 'n', 'v' }, '<space>kh', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
+  lsp_map({ 'i' }, '<C-h>', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
+  lsp_map({ 'n', 'v' }, '<space>wa', vim.lsp.buf.add_workspace_folder, 'Add Worspace Folder')
+  lsp_map({ 'n', 'v' }, '<space>wr', vim.lsp.buf.remove_workspace_folder, 'Remove Worspace Folder')
+  lsp_map({ 'n', 'v' }, '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, 'Print Workspace Folder List')
-  lsp_map({'n', 'v'}, '<space>D', vim.lsp.buf.type_definition, 'Type Definition')
-  lsp_map({'n', 'v'}, '<space>rs', vim.lsp.buf.rename, '[R]ename Symbol')
-  lsp_map({'n', 'v'}, '<space>ca', vim.lsp.buf.code_action)
-  lsp_map({'n', 'v'}, '<space>f', function()
+  lsp_map({ 'n', 'v' }, '<space>D', vim.lsp.buf.type_definition, 'Type Definition')
+  lsp_map({ 'n', 'v' }, '<space>rs', vim.lsp.buf.rename, '[R]ename Symbol')
+  lsp_map({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
+  lsp_map({ 'n', 'v' }, '<space>f', function()
     vim.lsp.buf.format({ async = true })
   end, '[F]ormat doc')
-  lsp_map({'n', 'v'}, '<F6>', vim.diagnostic.hide, 'Hide LSP suggestions')
-  lsp_map({'n', 'v'}, '<space>e', vim.diagnostic.open_float, 'Show Diagnostic')
-  lsp_map({'n', 'v'}, '[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
-  lsp_map({'n', 'v'}, ']d', vim.diagnostic.goto_next, 'Next Diagnostic')
-  lsp_map({'n', 'v'}, '<space>q', vim.diagnostic.setloclist, 'Diagnostic List')
-  lsp_map({'n', 'v'}, 'gr', telescope.lsp_references, 'Go to [R]eferences')
-  lsp_map({'n', 'v'}, '<space>qf', telescope.quickfix, '[Q]uickfix')
-  lsp_map({'n', 'v'}, '<space>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-  lsp_map({'n', 'v'}, '<space>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
+  lsp_map({ 'n', 'v' }, '<F6>', vim.diagnostic.hide, 'Hide LSP suggestions')
+  lsp_map({ 'n', 'v' }, '<space>e', vim.diagnostic.open_float, 'Show Diagnostic')
+  lsp_map({ 'n', 'v' }, '[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+  lsp_map({ 'n', 'v' }, ']d', vim.diagnostic.goto_next, 'Next Diagnostic')
+  lsp_map({ 'n', 'v' }, '<space>q', vim.diagnostic.setloclist, 'Diagnostic List')
+  lsp_map({ 'n', 'v' }, 'gr', telescope.lsp_references, 'Go to [R]eferences')
+  lsp_map({ 'n', 'v' }, '<space>qf', telescope.quickfix, '[Q]uickfix')
+  lsp_map({ 'n', 'v' }, '<space>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  lsp_map({ 'n', 'v' }, '<space>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -58,13 +64,18 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local to_install = { 'pylsp', 'tsserver', 'gopls', 'rust_analyzer' }
+local to_install = {
+  'pylsp',
+  'tsserver',
+  'gopls',
+  'rust_analyzer',
+}
 
 require("mason").setup({})
 
 require("mason-lspconfig").setup({
   ensure_installed = to_install,
-  automatic_installation = false,
+  automatic_installation = true,
 })
 
 if vim.fn.executable('lua-language-server') == 1 then
