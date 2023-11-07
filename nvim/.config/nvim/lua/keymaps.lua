@@ -29,10 +29,7 @@ map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
 map({ 'v', 'n' }, "<leader>d", [["_d]])
 
--- ThePrimagean
-map({ "n", "v" }, "<leader>y", [["+y]])                                       -- Copies selected to the system clipboard
-map("n", "<leader>Y", [["+Y]])                                                -- Copies line to the system clipboard
-map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- Search and replace the word under the cursor
+map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'}) -- Search and replace the word under the cursor
 map("n", "n", "nzzzv")                                                        -- Improved n
 map("n", "N", "Nzzzv")                                                        -- Improved N
 
@@ -42,11 +39,11 @@ map({ 'n', 'v' }, 'K', '<C-b>zz')
 map({ 'n', 'v' }, 'H', '{')
 map({ 'n', 'v' }, 'L', '}')
 
--- Buffer control
+-- Buffer moving
 -- map('n', '<Tab><Tab>', '<esc><C-w><C-w>', { desc = 'Next [Buffer]' })
 map('n', '<Tab>l', '<Esc><cmd>bn<cr>', { desc = 'Right [Buffer]' })
 map('n', '<Tab>h', '<Esc><cmd>bp<cr>', { desc = 'Left [Buffer]' })
-map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' }) -- TODO: create function in lua that creates new buffer if the current is the one being deleted and is the last one
+map('n', '<Tab>d', '<Esc><cmd>bnext<bar>bd#<cr>', { desc = 'Delete [Buffer]' })
 map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical with next [Buffer]' })
 
 -- identing
