@@ -13,7 +13,11 @@ require('plugins')
 -- Changes the cursor in insert mode
 -- opt.guicursor = ''
 
+opt.swapfile = false
+opt.backup = false
 opt.number = true
+opt.undofile = true
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- opt.relativenumber = true
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.cursorline = true
