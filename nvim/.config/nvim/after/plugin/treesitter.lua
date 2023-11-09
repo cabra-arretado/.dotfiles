@@ -5,16 +5,29 @@ end
 
 treesitter.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = { "vimdoc", "diff", "python", "lua", "dot", "json", "bash",
-    "dockerfile", "yaml", "hcl", "javascript", "typescript", "go",
-    "c_sharp", "rust" },
+  ensure_installed = {
+    "vimdoc",
+    "diff",
+    "python",
+    "lua",
+    "dot",
+    "json",
+    "bash",
+    "dockerfile",
+    "yaml",
+    "hcl",
+    "javascript",
+    "typescript",
+    "tsx",
+    "go",
+    "rust",
+  },
   auto_install = true,
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- List of parsers to ignore installing
-  --> ignore_install = { "javascript" },
   indent = {
     enable = true
   },
