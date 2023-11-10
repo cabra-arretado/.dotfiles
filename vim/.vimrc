@@ -49,13 +49,13 @@ nmap <C-s> :w<cr>
 vmap <C-y> <cmd>'<,'>*y<cr>
 
 "" move
-nnoremap J <C-f>
-nnoremap K <C-b>
-nnoremap H {{
-nnoremap L }}
+nnoremap J <C-f>zz
+nnoremap K <C-b>zz
+nnoremap H {
+nnoremap L }
 
-vnoremap J <C-f>
-vnoremap K <C-b>
+vnoremap J <C-f>zz
+vnoremap K <C-b>zz
 vnoremap H {
 vnoremap L }
 
