@@ -68,59 +68,64 @@ export VISUAL=/opt/homebrew/bin/nvim
 
 # Sets Vim keybidings to the terminal
 if [[ $ZSH_VERSION ]] ; then
-    bindkey -v
-    bindkey jk vi-cmd-mode
+  bindkey -v
+  bindkey jk vi-cmd-mode
 fi
 if [[ $BASH_VERSION ]] ; then
-    set -o vi
-    bind '"jk":vi-movement-mode'
+  set -o vi
+  bind '"jk":vi-movement-mode'
 fi
 
 ## Functions ##
 # Opens Git exclude file
 git_exclude()
 {
-    if [ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1 ; then
-	vi .git/info/exclude
-    else
-    	echo "Not a Git repo, mate (:"
-    fi
+  if [ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1 ; then
+    vi .git/info/exclude
+  else
+    echo "Not a Git repo, mate (:"
+  fi
 }
 
 # Identifies and source the .<shell>rc file
 szsh()
 {
-    if [[ $ZSH_VERSION ]] ; then
-	source $HOME/.zshrc
-    fi
-    if [[ $BASH_VERSION ]] ; then
-	source $HOME/.bashrc
-    fi
+  if [[ $ZSH_VERSION ]] ; then
+    source $HOME/.zshrc
+  fi
+  if [[ $BASH_VERSION ]] ; then
+    source $HOME/.bashrc
+  fi
 }
 
 # Opens alias.sh in the editor
 aliasconfig()
 {
-    nvim $HOME/dotfiles/aliases.sh
-    szsh
+  nvim $HOME/dotfiles/aliases.sh
+  szsh
 }
 
 # Log into Bash in a dock container
 # Argument: docker conatiner identifier
 docker_terminal()
 {
-    docker exec -it $1 bash
+  docker exec -it $1 bash
 }
 
 # Set Python Breakpoint() to IPDB if available
 if [ -x "$(command -v ipdb)" ]; then
-    export PYTHONBREAKPOINT="ipdb.set_trace"
+  export PYTHONBREAKPOINT="ipdb.set_trace"
 fi
 
 # Create or attach to a tmux session on startup
 if ! [[ $TMUX ]] ; then
-    tmux new -s "main"
+  tmux new -s "main"
 fi
+
+vf()
+{
+  fzf --print0 --height 40% --border | xargs -0 -o nvim
+}
 
 # fzf stuff
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
