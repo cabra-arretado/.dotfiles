@@ -37,18 +37,18 @@ set t_Co=256
 set cursorline
 
 
-""######################
-""####### REMAPS #######
-""######################
+"######################
+"####### REMAPS #######
+"######################
 
-"" general
+" general
 noremap ; :
 inoremap jk <Esc>
 inoremap JK <Esc>
 nmap <C-s> :w<cr>
 vmap <C-y> <cmd>'<,'>*y<cr>
 
-"" move
+" move
 nnoremap J <C-f>zz
 nnoremap K <C-b>zz
 nnoremap H {
@@ -59,25 +59,29 @@ vnoremap K <C-b>zz
 vnoremap H {
 vnoremap L }
 
-"" Better ident in visual mode
+" Better ident in visual mode
 vnoremap < <gv
 vnoremap > >gv
 
 
-"" new ones
+" new ones
 nmap <leader>ss :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nmap n nzzzv
 nmap N Nzzzv
 
-"" buffer/tab control
+" buffer/tab control
 nmap <Tab><Tab> <esc><C-w><C-w>
 nmap <Tab>l <Esc>:bn<cr>
 nmap <Tab>h <Esc>:bp<cr>
 nmap <Tab>d <Esc>:bdelete<cr>
 nmap <Tab>v <Esc>:vert<space>sbNext<cr>
 
-"" disables arrow keys
+" disables arrow keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" Open Vimrc
+nnoremap <leader>ev <cmd>e $MYVIMRC<cr>
+nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
