@@ -23,6 +23,8 @@ let maplocalleader = "\\"
 set noerrorbells
 set vb t_vb=
 
+set nohlsearch
+
 " status line
 set stl=%f\ %m\ %r\ line\ %l\ of\ %L\ [%p%%],\ column\ %c%=Type:%y
 set laststatus=2
@@ -35,7 +37,6 @@ set completeopt=menuone,longest,preview
 syntax on
 set t_Co=256
 set cursorline
-
 
 "######################
 "####### REMAPS #######
@@ -85,3 +86,5 @@ noremap <Right> <Nop>
 " Open Vimrc
 nnoremap <leader>ev <cmd>e $MYVIMRC<cr>
 nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
+
+onoremap p i(

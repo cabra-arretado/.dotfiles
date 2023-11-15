@@ -87,7 +87,6 @@ return require('lazy').setup({
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    opts = {}
   },
   {
     'hrsh7th/nvim-cmp',
