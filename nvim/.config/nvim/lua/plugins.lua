@@ -195,6 +195,11 @@ return require('lazy').setup({
   {
     "rebelot/kanagawa.nvim",
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {}
+  },
   ---------------------------------------------------
   -- THEMES NOT USED
   --
