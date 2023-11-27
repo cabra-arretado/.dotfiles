@@ -23,12 +23,13 @@ local lsp = lsp_zero.preset({
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  local map = require("utils").map
   local lsp_map = function(modes, lhs, rhs, desc)
-    local options = { noremap = true, silent = true, buffer = bufnr }
+    local options = { buffer = bufnr }
     if desc then
       options.desc = 'LSP: ' .. desc
     end
-    vim.keymap.set(modes, lhs, rhs, options)
+    map(modes, lhs, rhs, options)
   end
 
   local telescope = require('telescope.builtin')
@@ -58,10 +59,6 @@ local on_attach = function(client, bufnr)
   lsp_map({ 'n', 'v' }, '<space>qf', telescope.quickfix, '[Q]uickfix')
   lsp_map({ 'n', 'v' }, '<space>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
   lsp_map({ 'n', 'v' }, '<space>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
-
-  if client.name == "eslint" then
-    lsp_map({'n', 'v'}, "<leader>e", ":EslintFixAll<cr>")
-  end
 end
 
 lsp_zero.on_attach(on_attach)
