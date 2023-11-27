@@ -158,16 +158,7 @@ return require('lazy').setup({
       },
     },
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    lazy = true,
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-  },
+  { "nvim-tree/nvim-tree.lua" },
   {
     'RRethy/vim-illuminate',
     lazy = true
