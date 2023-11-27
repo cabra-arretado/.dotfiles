@@ -16,13 +16,11 @@ return require('lazy').setup({
   { 'mbbill/undotree' },
   {
     'rcarriga/nvim-notify',
-    lazy = false,
-    priority = 1000,
+    lazy = true,
+    -- priority = 1000,
     opts = {
-      -- TODO: Make the stages "fade" work without warning
       stages = "static"
     },
-    init = function() vim.notify = require('notify') end
   },
   {
     'lewis6991/gitsigns.nvim',
@@ -33,8 +31,6 @@ return require('lazy').setup({
   { 'christoomey/vim-tmux-navigator', },
   {
     'neovim/nvim-lspconfig',
-    -- TODO: LSPzero update
-    -- https://github.com/VonHeikemen/lsp-zero.nvim
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
@@ -42,10 +38,10 @@ return require('lazy').setup({
   },
   {
     'j-hui/fidget.nvim',
-    tag = 'legacy',
     opts = {}
   },
   { 'nvim-treesitter/nvim-treesitter' },
+  { 'folke/trouble.nvim' },
   { 'nvim-lua/plenary.nvim' },
   {
     'nvim-telescope/telescope.nvim',
@@ -59,6 +55,7 @@ return require('lazy').setup({
   { 'nvim-tree/nvim-web-devicons' },
   {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
     dependencies = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -167,16 +164,14 @@ return require('lazy').setup({
     branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
   },
   {
-    "github/copilot.vim",
-    lazy = false,
-    priority = 999,
+    'RRethy/vim-illuminate',
+    lazy = true
   },
-  { 'RRethy/vim-illuminate' },
   {
     -- TODO: Finish to test this out
     "nvim-treesitter/nvim-treesitter-context",
@@ -200,6 +195,11 @@ return require('lazy').setup({
     event = "InsertEnter",
     opts = {}
   },
+  -- {
+  --   "github/copilot.vim",
+  --   lazy = false,
+  --   priority = 999,
+  -- },
   ---------------------------------------------------
   -- THEMES NOT USED
   --

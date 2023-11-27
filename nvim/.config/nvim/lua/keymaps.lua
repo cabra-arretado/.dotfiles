@@ -1,15 +1,4 @@
-local map = function(modes, lhs, rhs, opts)
-  -- Parameters:
-  -- -- mode: string or table of strings with the modes
-  -- -- lhs: keys to bind
-  -- -- rhs: existing command or keybidding
-  -- -- opts: self descriptive
-  local options = { noremap = true, silent = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(modes, lhs, rhs, options)
-end
+local map = require("utils").map
 
 -- Overwrite the :w to call the function Save_file()
 vim.cmd("command! W lua Save_file()")
@@ -57,6 +46,7 @@ map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', 
 -- Telescope
 local telescope_builtin = require('telescope.builtin')
 
+-- TODO: Move all of that to Telescope.lua
 -- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
 map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[F]ind [F]iles the Original' })
@@ -80,7 +70,7 @@ map({ 'n', 'v' }, '<leader>/', function()
     previewer = false
   })
 end, { desc = '[/] Fuzzy find in the current buffer]' })
-map({ 'n', 'v' }, '<leader>al', require("telescope").extensions.notify.notify, { desc = 'Show [A][L]erts (Notify)' })
+map({ 'n', 'v' }, '<leader>m', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })
 
 
 -- Just for documentation

@@ -59,9 +59,9 @@ cmp.setup {
     -- ["<M-Space>"] = cmp.mapping.complete(),
   }),
   sources = cmp.config.sources({
-    { name = 'luasnip' },
     { name = 'nvim_lsp' },
-    { name = 'buffer' },
+    { name = 'luasnip' },
+    { name = 'buffer', keyword_length = 5 },
     { name = 'path' },
     { name = 'nvim_lsp_signature_help' }
   }),
