@@ -1,26 +1,28 @@
-local ok, lspconfig = pcall(require, "lspconfig")
-if not ok then
+local config_ok, lsp_config = pcall(require, "lspconfig")
+if not config_ok then
   return
 end
 
-local ok, lspzero = pcall(require, "lsp-zero")
-if not ok then
+local zero_ok, lsp_zero = pcall(require, "lsp-zero")
+if not zero_ok then
   return
 end
 
--- local neodev_present, neodev = pcall(require, "neodev")
--- if not neodev_present then
---   return
--- end
+local lsp = lsp_zero.preset({
+  name = "recommended",
+  sign_icons = {
+    error = "",
+    warn = "",
+    hint = "",
+    info = "",
+  },
+})
 
 ------------- LSP Mappings ----------------
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   local lsp_map = function(modes, lhs, rhs, desc)
     local options = { noremap = true, silent = true, buffer = bufnr }
     if desc then
@@ -30,9 +32,8 @@ local on_attach = function(client, bufnr)
   end
 
   local telescope = require('telescope.builtin')
-  lsp_map({ 'n', 'v' }, 'gD', vim.lsp.buf.declaration, '[G]o to [D]eclaration')
   lsp_map({ 'n', 'v' }, 'gd', vim.lsp.buf.definition, '[G]o to [d]efinition')
-  lsp_map({ 'n', 'v' }, '<leader>k', vim.lsp.buf.hover, 'Hover over')
+  lsp_map({ 'n', 'v' }, '<space>kk', vim.lsp.buf.hover, 'Hover over')
   lsp_map({ 'n', 'v' }, 'gi', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
   lsp_map({ 'n', 'v' }, '<space>kh', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
   lsp_map({ 'i' }, '<C-h>', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
@@ -41,7 +42,8 @@ local on_attach = function(client, bufnr)
   lsp_map({ 'n', 'v' }, '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, 'Print Workspace Folder List')
-  lsp_map({ 'n', 'v' }, '<space>D', vim.lsp.buf.type_definition, 'Type Definition')
+  lsp_map({ 'n', 'v' }, 'gD', vim.lsp.buf.type_definition, 'Type Definition')
+  lsp_map({ 'n', 'v' }, '<space>d', vim.diagnostic.open_float, 'Open Line Diagnostic')
   lsp_map({ 'n', 'v' }, '<space>rs', vim.lsp.buf.rename, '[R]ename Symbol')
   lsp_map({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action)
   lsp_map({ 'n', 'v' }, '<space>f', function()
@@ -56,33 +58,55 @@ local on_attach = function(client, bufnr)
   lsp_map({ 'n', 'v' }, '<space>qf', telescope.quickfix, '[Q]uickfix')
   lsp_map({ 'n', 'v' }, '<space>ws', telescope.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
   lsp_map({ 'n', 'v' }, '<space>ds', telescope.lsp_document_symbols, '[D]ocument [S]ymbols')
+
+  if client.name == "eslint" then
+    lsp_map({'n', 'v'}, "<leader>e", ":EslintFixAll<cr>")
+  end
 end
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+lsp_zero.on_attach(on_attach)
 
 local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-local to_install = {
-  'pylsp',
+vim.diagnostic.config({
+  virtual_text = true,
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+})
+
+local ensure_installed = {
+  'pyright',
   'tsserver',
   'gopls',
   'rust_analyzer',
+  'eslint',
+  'jsonls',
 }
 
+-- Mason Setup
 require("mason").setup({})
-
 require("mason-lspconfig").setup({
-  ensure_installed = to_install,
+  ensure_installed = ensure_installed,
   automatic_installation = true,
 })
+lsp_zero.setup_servers(ensure_installed)
 
 if vim.fn.executable('lua-language-server') == 1 then
-  lspconfig.lua_ls.setup {
+  lsp_config.lua_ls.setup {
     -- REPO: https://github.com/LuaLS/lua-language-server
-    capabilities = capabilities,
-    on_attach = on_attach,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    -- on_attach = on_attach,
     flags = lsp_flags,
     settings = {
       Lua = {
@@ -108,49 +132,5 @@ if vim.fn.executable('lua-language-server') == 1 then
         },
       },
     },
-  }
-end
-
-local max_line_python = 120
-
-local python_ignore_diagnostic = { "E203", "W503", "E501" }
-
-lspconfig['pylsp'].setup {
-  enabled = true,
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    -- VIDE: https://github.com/python-lsp/python-lsp-server/blob/develop/CONFIGURATION.md
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          enabled = false,
-          ignore = python_ignore_diagnostic,
-          maxLineLength = max_line_python,
-        },
-        flake8 = {
-          enabled = false,
-          ignore = python_ignore_diagnostic,
-          indentSize = 4,
-          maxLineLength = max_line_python,
-        },
-        pylint = {
-          enabled = false,
-          ignore = python_ignore_diagnostic,
-          maxLineLength = max_line_python,
-        },
-        pyright = { enabled = false },
-        isort = { enabled = true },
-      }
-    }
-  },
-}
-
-local default_lsp = { 'tsserver', 'omnisharp', 'gopls', 'rust_analyzer' }
-for _, lsp in pairs(default_lsp) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
   }
 end
