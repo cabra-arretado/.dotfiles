@@ -46,6 +46,7 @@ map({ 'n', 'v' }, '<leader>sb', '<cmd>Neotree toggle float reveal buffers<cr>', 
 -- Telescope
 local telescope_builtin = require('telescope.builtin')
 
+-- TODO: Move all of that to Telescope.lua
 -- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
 map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[F]ind [F]iles the Original' })

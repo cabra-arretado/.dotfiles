@@ -41,6 +41,7 @@ return require('lazy').setup({
     opts = {}
   },
   { 'nvim-treesitter/nvim-treesitter' },
+  { 'folke/trouble.nvim' },
   { 'nvim-lua/plenary.nvim' },
   {
     'nvim-telescope/telescope.nvim',
