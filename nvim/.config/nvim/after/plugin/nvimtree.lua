@@ -16,7 +16,7 @@ local function my_on_attach(bufnr)
   end
 
   api.config.mappings.default_on_attach(bufnr)
-
+  vim.keymap.set('n', 'U', api.tree.change_root_to_parent, opts('Up'))
   vim.keymap.set('n', 'v', api.node.open.vertical, opts('Vertical Split'))
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
   vim.keymap.set('n', 'C', api.tree.change_root_to_node, opts('CD'))
