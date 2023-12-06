@@ -9,8 +9,6 @@ map({ 'n', 'v', 't' }, ';', ':')
 map({ 'n', 'v', 't' }, "'", ',')
 map({ 'n', 'v', 't' }, '&', '<cmd>noh<cr>')
 map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration' }) --  Register registration
-map('i', 'jk', '<Esc>')
-map('i', 'JK', '<Esc>')
 map('n', '<C-c>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
 map({ 'n', 'v' }, ',', '<Esc>,')
 map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
@@ -18,13 +16,16 @@ map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
 map({ 'v', 'n' }, "<leader>d", [["_d]])
 
-map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'})
+
+map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'})
 map("n", "n", "nzzzv")                                                        -- Improved n
 map("n", "N", "Nzzzv")                                                        -- Improved N
 
 -- Insert mode mappings
--- map("i", "<C-i>", "<Esc>I")
+map('i', 'jk', '<Esc>')
+map('i', 'JK', '<Esc>')
 map("i", "<C-a>", "<Esc>A")
+-- map("i", "<C-i>", "<Esc>I") -- won't work because c-i sends tab sign to terminal
 
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>zz')
@@ -48,7 +49,6 @@ map("v", ">", ">gv")
 local telescope_builtin = require('telescope.builtin')
 
 -- TODO: Move all of that to Telescope.lua
--- map({ 'n', 'v' }, '<leader>ss', telescope_builtin.treesitter, { desc = '[S]earch [S]ymbols' })
 map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
 map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[F]ind [F]iles the Original' })
 map({ 'n', 'v' }, '<leader>fw', telescope_builtin.live_grep, { desc = '[F]ind in [W]orkspace' })
