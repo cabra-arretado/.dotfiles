@@ -22,6 +22,10 @@ map("n", "<space>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { 
 map("n", "n", "nzzzv")                                                        -- Improved n
 map("n", "N", "Nzzzv")                                                        -- Improved N
 
+-- Insert mode mappings
+-- map("i", "<C-i>", "<Esc>I")
+map("i", "<C-a>", "<Esc>A")
+
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>zz')
 map({ 'n', 'v' }, 'K', '<C-b>zz')
