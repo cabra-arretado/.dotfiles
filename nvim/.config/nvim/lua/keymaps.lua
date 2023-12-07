@@ -45,33 +45,6 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 
--- Telescope
-local telescope_builtin = require('telescope.builtin')
-
--- TODO: Move all of that to Telescope.lua
-map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
-map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[F]ind [F]iles the Original' })
-map({ 'n', 'v' }, '<leader>fw', telescope_builtin.live_grep, { desc = '[F]ind in [W]orkspace' })
-map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
-map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
-map({ 'n', 'v' }, '<leader>sr', telescope_builtin.registers, { desc = '[S]earch [R]egisters' })
-map({ 'n', 'v' }, '<leader>sj', telescope_builtin.jumplist, { desc = '[S]earch [J]umplist' })
-map({ 'n', 'v' }, '<leader>gc', telescope_builtin.git_commits, { desc = '[G]it [C]ommits' })
-map({ 'n', 'v' }, '<leader>gbr', telescope_builtin.git_branches, { desc = '[G]it [B]ranches' })
-map({ 'n', 'v' }, '<leader>gs', telescope_builtin.git_status, { desc = '[G]it [S]tatus' })
-map({ 'n', 'v' }, '<leader>km', telescope_builtin.keymaps, { desc = '[K]ey[m]aps' })
-map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neovim' })
-map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
-map({ 'n', 'v' }, '<leader>cs', telescope_builtin.colorscheme, { desc = 'Change colorscheme' })
-map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odo' })
-map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
-map({ 'n', 'v' }, '<leader>/', function()
-  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    -- winblend = 10,
-    previewer = false
-  })
-end, { desc = '[/] Fuzzy find in the current buffer]' })
-map({ 'n', 'v' }, '<leader>m', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })
 
 
 -- Just for documentation
