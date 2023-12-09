@@ -25,9 +25,9 @@ end
 nvimtree.setup({
   on_attach = my_on_attach,
   sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-  },
+  -- view = {
+  -- adaptive_size = true,
+  -- },
   renderer = {
     indent_markers = {
       enable = true
