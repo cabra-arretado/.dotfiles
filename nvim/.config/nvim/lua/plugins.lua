@@ -27,7 +27,10 @@ return require('lazy').setup({
     opts = {}
   },
   { 'tpope/vim-fugitive' },
-  { 'tpope/vim-commentary' },
+  { 'numToStr/Comment.nvim',
+    lazy = false,
+    opts = {}
+  },
   { 'christoomey/vim-tmux-navigator', },
   {
     'neovim/nvim-lspconfig',
