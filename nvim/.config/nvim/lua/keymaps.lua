@@ -27,6 +27,15 @@ map('i', 'JK', '<Esc>')
 map("i", "<C-a>", "<Esc>A")
 -- map("i", "<C-i>", "<Esc>I") -- won't work because c-i sends tab sign to terminal
 
+-- Operand
+map("o", "p", "i(")
+map("o", "(", "i(")
+map("o", "{", "i{")
+map("o", "[", "i[")
+map("o", "'", "i'")
+map("o", '"', 'i"')
+
+
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>zz')
 map({ 'n', 'v' }, 'K', '<C-b>zz')
@@ -43,6 +52,7 @@ map('n', '<Tab>v', '<Esc><cmd>vert<space>sbNext<cr>', { desc = 'Split Vertical w
 -- identing
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
 
 
 -- Telescope
