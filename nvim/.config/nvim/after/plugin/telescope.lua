@@ -87,11 +87,11 @@ telescope.setup {
     buffers = {
       initial_mode = 'normal',
       mappings = {
-	n = {
-	  ["x"] = require("telescope.actions").delete_buffer,
-	  ["B"] = require("telescope.actions").move_selection_next,
-	  ["b"] = require("telescope.actions").select_default,
-	},
+        n = {
+          ["x"] = require("telescope.actions").delete_buffer,
+          ["B"] = require("telescope.actions").move_selection_next,
+          ["b"] = require("telescope.actions").select_default,
+        },
       },
     },
   },
@@ -101,9 +101,10 @@ telescope.setup {
 local map = require("utils").map
 local telescope_builtin = require('telescope.builtin')
 
-map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[F]ind [F]iles in Git' })
-map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[F]ind [F]iles the Original' })
-map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[F]ind in [W]orkspace' })
+-- Builtin
+map({ 'n', 'v' }, '<leader>sg', telescope_builtin.git_files, { desc = '[S]earch [F]iles in Git' })
+map({ 'n', 'v' }, '<leader>sf', telescope_builtin.find_files, { desc = '[S]earch [F]iles the Original' })
+map({ 'n', 'v' }, '<leader>sw', telescope_builtin.live_grep, { desc = '[S]earch in [W]orkspace' })
 map({ 'n', 'v' }, '<leader>sp', telescope_builtin.builtin, { desc = '[S]earch Telescope [B]uiltins Pickers' })
 map({ 'n', 'v' }, '<leader>sc', telescope_builtin.grep_string, { desc = '[S]earch String Under [C]ursor' })
 map({ 'n', 'v' }, '<leader>sr', telescope_builtin.registers, { desc = '[S]earch [R]egisters' })
@@ -115,13 +116,8 @@ map({ 'n', 'v' }, '<leader>km', telescope_builtin.keymaps, { desc = '[K]ey[m]aps
 map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neovim' })
 map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>cs', telescope_builtin.colorscheme, { desc = 'Change colorscheme' })
-map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[F]ind [T]odo' })
-map({ 'n', 'v' }, '<leader>gb', '<cmd>Gitsigns blame_line<cr>', { desc = '[G]it [B]lame [L]ine' })
-map({ 'n', 'v' }, '<leader>/', function()
-  telescope_builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    -- winblend = 10,
-    previewer = false
-  })
-end, { desc = '[/] Fuzzy find in the current buffer]' })
-map({ 'n', 'v' }, '<leader>m', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })
 
+-- Extesions
+map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[S]earch [T]odo' })
+map({ 'n', 'v' }, '<leader>sm', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })
+map({ 'n', 'v' }, '<leader>sr', '<cmd>Telescope neoclip<cr>', { desc = '[S]earch [R]egisters' })
