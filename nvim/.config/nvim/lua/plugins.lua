@@ -27,7 +27,8 @@ return require('lazy').setup({
     opts = {}
   },
   { 'tpope/vim-fugitive' },
-  { 'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
     lazy = false,
     opts = {}
   },
@@ -83,6 +84,12 @@ return require('lazy').setup({
     dependencies = {
       { 'rafamadriz/friendly-snippets' },
     }
+  },
+  {
+    "AckslD/nvim-neoclip.lua",
+    dependencies = {
+      "nvim-telescope/telescope.nvim"
+    },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
