@@ -4,8 +4,7 @@ if not ok then
   return
 end
 
-vim.keymap.set({ "i", "s" }, "<M-l>", function()
-  -- TODO: See if I can get that in the <C-;>
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
