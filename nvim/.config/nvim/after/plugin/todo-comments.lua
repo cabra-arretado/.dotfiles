@@ -10,7 +10,7 @@ require('todo-comments').setup({
     HACK = { icon = " ", color = "warning", alt = { 'TODOfm', 'todofm', 'TICKET', 'ticket' } },
     WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    NOTE = { icon = " ", color = "hint", alt = { "INFO", 'FM' } },
     TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
   },
   highlight = {
