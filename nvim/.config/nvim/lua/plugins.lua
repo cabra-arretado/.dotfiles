@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
   { 'mbbill/undotree' },
+  { 'JoosepAlviste/nvim-ts-context-commentstring' },
   {
     'rcarriga/nvim-notify',
     lazy = true,
@@ -30,7 +31,6 @@ return require('lazy').setup({
   {
     'numToStr/Comment.nvim',
     lazy = false,
-    opts = {}
   },
   { 'christoomey/vim-tmux-navigator', },
   {
