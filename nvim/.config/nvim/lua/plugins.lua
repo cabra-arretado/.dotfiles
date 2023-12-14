@@ -196,11 +196,11 @@ return require('lazy').setup({
     event = "InsertEnter",
     opts = {}
   },
-  -- {
-  --   "github/copilot.vim",
-  --   lazy = false,
-  --   priority = 999,
-  -- },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    priority = 999,
+  },
   ---------------------------------------------------
   -- THEMES NOT USED
   --
