@@ -9,7 +9,7 @@ map({ 'n', 'v', 't' }, ';', ':')
 map({ 'n', 'v', 't' }, "'", ',')
 map({ 'n', 'v', 't' }, '&', '<cmd>noh<cr>')
 map({ 'n', 'v' }, 'R', '"', { desc = 'Register Registration' }) --  Register registration
-map('n', '<C-r>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
+map('n', '<C-c>', '<cmd>checktime<cr>', { desc = 'Refresh Buffers' })
 map({ 'n', 'v' }, ',', '<Esc>,')
 map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
