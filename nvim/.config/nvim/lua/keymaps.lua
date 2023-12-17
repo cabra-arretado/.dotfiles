@@ -35,7 +35,6 @@ map("o", "[", "i[")
 map("o", "'", "i'")
 map("o", '"', 'i"')
 
-
 -- Moving
 map({ 'n', 'v' }, 'J', '<C-f>zz')
 map({ 'n', 'v' }, 'K', '<C-b>zz')

@@ -44,7 +44,7 @@ g.maplocalleader = '\\'
 g.markdown_remmended_style = 0
 
 -- Theme
-local theme = [[kanagawa]]
+local theme = [[rose-pine]]
 cmd.colorscheme(theme)
 
 

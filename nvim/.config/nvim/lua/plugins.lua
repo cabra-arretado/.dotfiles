@@ -189,9 +189,6 @@ return require('lazy').setup({
     opts = {}
   },
   {
-    "rebelot/kanagawa.nvim",
-  },
-  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {}
@@ -202,7 +199,7 @@ return require('lazy').setup({
     priority = 999,
   },
   ---------------------------------------------------
-  -- THEMES NOT USED
+  -- THEMES
   --
   -- {
   --   'folke/tokyonight.nvim',
@@ -210,8 +207,17 @@ return require('lazy').setup({
   --   priority = 1000,
   --   opts = {},
   -- },
-  -- { 'rose-pine/neovim', name = 'rose-pine' },
   --
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  -- },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine'
+  },
+  -- {
+  --   'Mofiqul/vscode.nvim'
+  -- }
   ---------------------------------------------------
 }
 )
