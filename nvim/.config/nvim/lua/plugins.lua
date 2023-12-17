@@ -211,10 +211,11 @@ return require('lazy').setup({
   -- {
   --   "rebelot/kanagawa.nvim",
   -- },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine'
-  },
+  -- {
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine'
+  -- },
+  { "catppuccin/nvim" },
   -- {
   --   'Mofiqul/vscode.nvim'
   -- }
