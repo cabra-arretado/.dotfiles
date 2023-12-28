@@ -2,6 +2,7 @@
 DOTPATH="$HOME/dotfiles"
 alias dotfiles="cd $DOTPATH"
 
+
 # Alias Git
 alias g="git"
 alias ga="git add"
@@ -27,6 +28,8 @@ alias gs="git status"
 alias gcleanall="git reset && git checkout -- . && git clean -df"
 
 # Alias Tmux
+alias ts="$DOTPATH/scripts/tmux-sessionizer"
+alias ff="$DOTPATH/scripts/tmux-sessionizer"
 alias tns="tmux new -s" # new session by name
 alias ta="tmux a -t" # attach by name
 alias tls="tmux ls"
