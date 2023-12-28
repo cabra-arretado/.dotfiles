@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-branch=$(git branch | fzf)
+branch=$(git branch | fzf | tr -d '* ')
 
-formated_branch_name=$(echo $branch | tr -d '* ')
-
-# echo $formated_branch_name
-git checkout $formatted_branch_name
+git checkout $branch
