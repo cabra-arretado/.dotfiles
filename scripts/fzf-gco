@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+branch=$(git branch | fzf | tr -d '* ')
+
+git checkout $branch
