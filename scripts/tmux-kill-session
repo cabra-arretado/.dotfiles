@@ -1,0 +1,3 @@
+#!/bin/zsh
+#
+# TODO: Has to kill the session selected by fzf
