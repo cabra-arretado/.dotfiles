@@ -2,7 +2,6 @@
 DOTPATH="$HOME/dotfiles"
 alias dotfiles="cd $DOTPATH"
 
-
 # Alias Git
 alias g="git"
 alias ga="git add"
@@ -12,8 +11,8 @@ alias gc="git commit -v"
 alias gcm="git commit -v -m"
 alias gcnm="git commit -v -n -m"
 alias gca="git add --all && git commit -v -m"
-alias gc!="git commit -v --amend -m"
-alias gco="git checkout"
+alias gc!="git commit -v --amend"
+alias gcob="git checkout"
 alias gd="git diff"
 alias gdm="git diff master"
 alias gdca="git diff --cached"
@@ -26,11 +25,16 @@ alias gp="git pull"
 alias gpush="git push"
 alias gs="git status"
 alias gcleanall="git reset && git checkout -- . && git clean -df"
+alias gprune="git fetch --prune"
+alias gsa="git stash"
+alias gspop="git stash pop"
+alias gsls="git stash list"
+# Git Scripts
+alias gco="$DOTPATH/scripts/fzf-gco"
 
 # Alias Tmux
 alias ts="$DOTPATH/scripts/tmux-sessionizer"
 alias ff="$DOTPATH/scripts/tmux-sessionizer"
-alias gcob="$DOTPATH/scripts/fzf-gco"
 alias tns="tmux new -s" # new session by name
 alias ta="tmux a -t" # attach by name
 alias tls="tmux ls"
