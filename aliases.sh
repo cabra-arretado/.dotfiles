@@ -34,12 +34,10 @@ alias gco="$DOTPATH/scripts/fzf-gco"
 
 # Alias Tmux
 alias ts="$DOTPATH/scripts/tmux-sessionizer"
-alias ff="$DOTPATH/scripts/tmux-sessionizer"
-alias gcob="$DOTPATH/scripts/fzf-gco"
+alias tks="$DOTPATH/scripts/tmux-kill-session"
 alias tns="tmux new -s" # new session by name
 alias ta="tmux a -t" # attach by name
 alias tls="tmux ls"
-alias tks="tmux kill-session -t"
 
 # Alias General
 alias zshconfig="vi ~/.zshrc; source ~/.zshrc;"
