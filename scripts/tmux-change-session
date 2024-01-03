@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(tmux ls | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+tmux switch -t $selected
