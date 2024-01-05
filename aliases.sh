@@ -33,9 +33,8 @@ alias gsls="git stash list"
 alias gco="$DOTPATH/scripts/fzf-gco"
 
 # Alias Tmux
-alias ts="$DOTPATH/scripts/tmux-sessionizer"
+alias tns="$DOTPATH/scripts/tmux-sessionizer"
 alias tks="$DOTPATH/scripts/tmux-kill-session"
-alias tns="tmux new -s" # new session by name
 alias ta="tmux a -t" # attach by name
 alias tls="tmux ls"
 
