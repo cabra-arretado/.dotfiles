@@ -94,9 +94,13 @@ git_exclude()
 }
 
 # Wrap the command in time and voice
-tm()
+vc()
 {
-  time $@ && say "Done" || say "Error"
+  if [ $# -eq 0 ]; then
+    echo "Usage: vc <command>"
+  else
+    time $@ && say "Done" || say "Error"
+  fi
 }
 
 # Identifies and source the .<shell>rc file
