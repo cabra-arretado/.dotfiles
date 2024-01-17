@@ -93,6 +93,12 @@ git_exclude()
   fi
 }
 
+# Wrap the command in time and voice
+tm()
+{
+  time $@ && say "Done" || say "Error"
+}
+
 # Identifies and source the .<shell>rc file
 szsh()
 {
