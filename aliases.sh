@@ -72,7 +72,9 @@ alias pip="pip3"
 export EDITOR=/opt/homebrew/bin/nvim
 export VISUAL=/opt/homebrew/bin/nvim
 
-# Sets Vim keybidings to the terminal
+set_vim_mode()
+{
+# Sets Vim keybidings to shell
 if [[ $ZSH_VERSION ]] ; then
   bindkey -v
   bindkey jk vi-cmd-mode
@@ -81,6 +83,7 @@ if [[ $BASH_VERSION ]] ; then
   set -o vi
   bind '"jk":vi-movement-mode'
 fi
+}
 
 ## Functions ##
 # Opens Git exclude file
@@ -128,21 +131,31 @@ docker_terminal()
   docker exec -it $1 bash
 }
 
+# set_idb()
+# {
 # Set Python Breakpoint() to IPDB if available
-if [ -x "$(command -v ipdb)" ]; then
-  export PYTHONBREAKPOINT="ipdb.set_trace"
-fi
+# if [ -x "$(command -v ipdb)" ]; then
+#   export PYTHONBREAKPOINT="ipdb.set_trace"
+# fi
+# }
 
 # Create or attach to a tmux session on startup
-if ! [[ $TMUX ]] ; then
-  tmux new -s "main"
-fi
+
+create_tmux_session()
+{
+  if ! [[ $TMUX ]] ; then
+    tmux new -s "main"
+  fi
+}
 
 vf()
 {
   fzf --print0 --height 40% --border | xargs -0 -o nvim
 }
 
+# calling some functions
+create_tmux_session
+set_vim_mode
+
 # fzf stuff
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
