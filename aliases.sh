@@ -48,7 +48,8 @@ alias t="tree -L 1 -a --dirsfirst"
 alias tt="tree -L 2 -a --dirsfirst"
 alias la="ls -a"
 alias c="clear"
-# alias szsh="source ~/.zshrc"
+
+alias vsc="code $PWD"
 
 
 # Vim related
