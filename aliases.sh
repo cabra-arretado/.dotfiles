@@ -29,7 +29,7 @@ alias gprune="git fetch --prune"
 alias gsa="git stash"
 alias gspop="git stash pop"
 alias gsls="git stash list"
-alias gorepo="gh repo view --web"
+alias repo="gh repo view --web"
 # Git Scripts
 alias gco="$DOTPATH/scripts/fzf-gco"
 
