@@ -34,7 +34,7 @@ local on_attach = function(client, bufnr)
 
   local telescope = require('telescope.builtin')
   lsp_map({ 'n', 'v' }, 'gd', vim.lsp.buf.definition, '[G]o to [d]efinition')
-  lsp_map({ 'n', 'v' }, '<space>h', vim.lsp.buf.hover, 'Hover over')
+  lsp_map({ 'n', 'v' }, '<space><space>', vim.lsp.buf.hover, 'Hover over')
   lsp_map({ 'n', 'v' }, 'gi', vim.lsp.buf.implementation, '[G]o to [I]mplementation')
   lsp_map({ 'n', 'v' }, '<space>k', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
   lsp_map({ 'i' }, '<C-h>', vim.lsp.buf.signature_help, '[S]ignature [H]elp')
