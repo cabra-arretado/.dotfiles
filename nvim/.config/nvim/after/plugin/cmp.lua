@@ -20,7 +20,7 @@ local cmp_mapping = cmp.mapping.preset.insert({
 -- Global setup.
 cmp.setup {
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false
   },
   mapping = cmp_mapping,
