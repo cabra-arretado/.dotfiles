@@ -38,6 +38,7 @@ alias tns="$DOTPATH/scripts/tmux-sessionizer"
 alias tks="$DOTPATH/scripts/tmux-kill-session"
 alias ta="tmux a -t" # attach by name
 alias tls="tmux ls"
+alias tcs="clear && tmux clear-history"
 
 # Alias General
 alias zshconfig="vi ~/.zshrc; source ~/.zshrc;"
