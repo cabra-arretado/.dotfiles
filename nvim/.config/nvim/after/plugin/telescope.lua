@@ -117,6 +117,12 @@ map({ 'n', 'v' }, '<leader>h', telescope_builtin.help_tags, { desc = '[H]elp Neo
 map({ 'n', 'v' }, '<leader>o', telescope_builtin.oldfiles, { desc = 'Last Opened Files. [O]ld files' })
 map({ 'n', 'v' }, '<leader>cs', telescope_builtin.colorscheme, { desc = 'Change colorscheme' })
 
+map({ 'n', 'v' }, 'B', function()
+  telescope_builtin.buffers(require('telescope.themes').get_dropdown {
+    previewer = false
+  })
+end, { desc = 'Select [B]uffers' })
+
 -- Extesions
 map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[S]earch [T]odo' })
 map({ 'n', 'v' }, '<leader>sm', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })

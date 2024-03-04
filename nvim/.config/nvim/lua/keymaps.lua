@@ -65,11 +65,6 @@ map({ 'n', 'v' }, '<localleader>gd', '<cmd>Gitsigns diffthis origin/main<cr>', {
 map({ 'n', 'v' }, '<F3>', '<cmd>!code . && code %<cr>', { desc = 'Open repo and file in VSCode' })
 map({ 'n', 'v' }, '<F4>', '<cmd>!code %<cr>', { desc = 'Open file in VSCode' })
 
-map({ 'n', 'v' }, 'B', function()
-  telescope_builtin.buffers(require('telescope.themes').get_dropdown {
-    previewer = false
-  })
-end, { desc = 'Select [B]uffers' })
 
 map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 
