@@ -143,11 +143,23 @@ docker_terminal()
 # }
 
 # Create or attach to a tmux session on startup
-
 create_tmux_session()
 {
   if ! [[ $TMUX ]] ; then
     tmux new -s "main"
+  fi
+}
+
+nopushbranch()
+{
+  current_branch=$(git branch --show-current)
+
+  if [[ $1 -eq "-u" ]]; then
+    echo "Unsetting pushRemote to '' for branch $current_branch"
+    git config --unset branch.$currentbranch.pushRemote
+  else
+    echo "Setting pushRemote to '' for branch $current_branch"
+    git config branch.$currentbranch.pushRemote ''
   fi
 }
 
