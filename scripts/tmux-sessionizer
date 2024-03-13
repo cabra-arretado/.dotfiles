@@ -6,7 +6,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Workspace -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Workspace -mindepth 1 -maxdepth 1 -type d | fzf --print0 --height 40% --border)
 fi
 
 if [[ -z $selected ]]; then

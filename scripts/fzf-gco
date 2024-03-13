@@ -2,7 +2,7 @@
 
 # Checks if we have a argument
 if [ $# -eq 0 ]; then
-  branch=$(git branch | fzf | tr -d '* ')
+  branch=$(git branch | fzf --print0 --height 40% --border | tr -d '* ')
   git checkout $branch
   exit 0
 fi

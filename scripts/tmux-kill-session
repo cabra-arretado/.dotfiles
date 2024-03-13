@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(tmux ls | fzf)
+    selected=$(tmux ls | fzf --print0 --height 40% --border)
 fi
 
 if [[ -z $selected ]]; then
