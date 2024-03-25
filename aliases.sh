@@ -32,6 +32,7 @@ alias gsls="git stash list"
 alias repo="gh repo view --web"
 # Git Scripts
 alias gco="$DOTPATH/scripts/fzf-gco"
+alias nukemybranch="$DOTPATH/scripts/nuke-my-branch"
 
 # Alias Tmux
 alias tns="$DOTPATH/scripts/tmux-sessionizer"

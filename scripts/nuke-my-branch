@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# Checks if we have a argument
+if [ $# -eq 0 ]; then
+  branch=$(git branch | fzf --print0 --height 40% --border | tr -d '* ')
+  if [ -z "$branch" ]; then
+    exit 1
+  fi
+
+if [[ $branch =~ ^(master|main|develop)$ ]]; then
+    echo -e "\033[31mYOU CAN'T DELETE the \033[33m$branch\033[31m branch\033[0m"
+    exit 1
+fi
+
+
+  echo -e "\033[31mAre you sure you want to NUKE the branch \033[33m$branch\033[0m? (y/n)"
+  read confirmation
+  if [[ $confirmation =~ ^[Yy]$ ]]; then
+    git branch -D $branch
+    echo -e "\033[31mBranch \033[33m$branch\033[31m was deleted\033[0m"
+    exit 0
+    else
+    echo "Branch $branch was NOT deleted"
+    exit 0
+  fi
+fi
