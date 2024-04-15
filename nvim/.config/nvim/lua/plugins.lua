@@ -216,7 +216,7 @@ return require('lazy').setup({
   --   name = 'rose-pine'
   -- },
   { "catppuccin/nvim" },
-  -- { "projekt0n/github-nvim-theme" },
+  { "projekt0n/github-nvim-theme" },
   -- { "sainnhe/sonokai" },
   -- {
   --   'Mofiqul/vscode.nvim'

@@ -18,7 +18,7 @@ opt.backup = false
 opt.number = true
 opt.undofile = true
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- opt.relativenumber = true
+opt.relativenumber = true
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.cursorline = true
 opt.splitright = true
@@ -35,7 +35,7 @@ opt.laststatus = 3
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.list = true
--- opt.listchars:append "eol:↴" -- other options( ↩ , ↴ , ↵ )
+opt.listchars:append "eol:↴" -- other options( ↩ , ↴ , ↵ )
 opt.listchars:append "trail:·"
 opt.breakindent = true
 opt.linebreak = true
@@ -44,7 +44,8 @@ g.maplocalleader = '\\'
 g.markdown_remmended_style = 0
 
 -- Theme
-local theme = [[catppuccin]]
+-- local theme = [[catppuccin]]
+local theme = [[github_dark_dimmed]]
 cmd.colorscheme(theme)
 
 
