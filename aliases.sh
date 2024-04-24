@@ -46,10 +46,15 @@ alias zshconfig="vi ~/.zshrc; source ~/.zshrc;"
 alias vimconfig="vi ~/.vimrc"
 alias nvimconfig="vi ~/.config/nvim/init.vim"
 alias tmuxconfig="vi ~/.tmux.conf"
-alias t="tree -L 1 -a --dirsfirst"
-alias tt="tree -L 2 -a --dirsfirst"
+# alias t="tree -L 1 -a --dirsfirst"
+# alias tt="tree -L 2 -a --dirsfirst"
 alias la="ls -a"
 alias c="clear"
+
+cdc(){
+  # Change Directory Choice
+  cd $(ls -d */ | fzf)
+}
 
 alias vsc="code $PWD"
 
