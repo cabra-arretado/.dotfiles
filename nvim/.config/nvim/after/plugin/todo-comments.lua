@@ -7,10 +7,10 @@ require('todo-comments').setup({
       -- signs = false, -- configure signs for some keywords individually
     },
     TODO = { icon = " ", color = "info" },
-    HACK = { icon = " ", color = "warning", alt = { 'TODOfm', 'todofm', 'TICKET', 'ticket' } },
-    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    FM = { icon = " ", color = "warning", alt = { 'FM', 'fm', 'TICKET', 'ticket' } },
+    -- WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO", 'FM' } },
+    -- NOTE = { icon = " ", color = "hint", alt = { "INFO", 'FM' } },
     TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
   },
   highlight = {

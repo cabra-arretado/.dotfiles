@@ -124,6 +124,6 @@ map({ 'n', 'v' }, 'B', function()
 end, { desc = 'Select [B]uffers' })
 
 -- Extesions
-map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[S]earch [T]odo' })
+map({ 'n', 'v' }, '<leader>st', '<cmd>TodoTelescope keywords=FM<cr>', { desc = '[S]earch [T]odo' })
 map({ 'n', 'v' }, '<leader>sm', require("telescope").extensions.notify.notify, { desc = 'Show Messages (Notify)' })
 map({ 'n', 'v' }, '<leader>sr', '<cmd>Telescope neoclip<cr>', { desc = '[S]earch [R]egisters' })
