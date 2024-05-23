@@ -169,6 +169,11 @@ nopushbranch()
   fi
 }
 
+gdmf()
+{
+  git diff origin/main -- $(git diff main --name-only | fzf)
+}
+
 vf()
 {
   fzf --print0 --height 40% --border | xargs -0 -o nvim
