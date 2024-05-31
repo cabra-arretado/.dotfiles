@@ -179,6 +179,17 @@ vf()
   fzf --print0 --height 40% --border | xargs -0 -o nvim
 }
 
+gcore()
+{
+#TODO:
+  git fetch --prune
+  branche=$(git branch -r |\
+    sed 's/origin\///' |\
+    sed 's/^[[:space:]]*//' |\
+    fzf)
+  git checkout $branche
+}
+
 # calling some functions
 create_tmux_session
 set_vim_mode

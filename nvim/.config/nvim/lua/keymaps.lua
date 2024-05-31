@@ -71,6 +71,9 @@ map({ 'n', 'v' }, '<leader>z', '<cmd>ZenMode<cr>', { desc = '[Z]en [M]ode' })
 map({ 'v' }, '<M-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
 map({ 'v' }, '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
 
+-- Deactivate TS-Context-Highlight
+map({ 'n', 'v' }, '<leader>ch', '<cmd>TSContextToggle<cr>', { desc = 'Disable TS-Context-Highlight' })
+
 
 -- Copilot keymaps, here for lack of better place
 -- vim.cmd([[imap <silent><script><expr> <S-Tab> copilot#Accept("\<CR>")]])
