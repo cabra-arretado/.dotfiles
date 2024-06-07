@@ -51,10 +51,6 @@ alias tmuxconfig="vi ~/.tmux.conf"
 alias la="ls -a"
 alias c="clear"
 
-cdc(){
-  # Change Directory Choice
-  cd $(ls -d */ | fzf)
-}
 
 alias vsc="code $PWD"
 
@@ -169,27 +165,13 @@ nopushbranch()
   fi
 }
 
-gdmf()
-{
-  git diff origin/main -- $(git diff main --name-only | fzf)
-}
-
 vf()
 {
   fzf --print0 --height 40% --border | xargs -0 -o nvim
 }
 
-gcore()
-{
-#TODO:
-  git fetch --prune
-  branche=$(git branch -r |\
-    sed 's/origin\///' |\
-    sed 's/^[[:space:]]*//' |\
-    fzf)
-  git checkout $branche
-}
-
+# source the helpers repo
+source $DOTPATH/cli-helpers/helpers.sh
 # calling some functions
 create_tmux_session
 set_vim_mode

@@ -1,0 +1,3 @@
+[submodule "cli-helpers"]
+	path = cli-helpers
+	url = git@github.com:cabra-arretado/cli-helpers.git
