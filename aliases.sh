@@ -50,6 +50,7 @@ alias tmuxconfig="vi ~/.tmux.conf"
 # alias tt="tree -L 2 -a --dirsfirst"
 alias la="ls -a"
 alias c="clear"
+alias gdv="git diff -w | nvim -R -"
 
 
 alias vsc="code $PWD"
