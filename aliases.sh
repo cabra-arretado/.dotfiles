@@ -30,6 +30,7 @@ alias gsa="git stash"
 alias gspop="git stash pop"
 alias gsls="git stash list"
 alias repo="gh repo view --web"
+alias gconfig="vi ~/.gitconfig"
 # Git Scripts
 alias gco="$DOTPATH/scripts/fzf-gco"
 alias nukemybranch="$DOTPATH/scripts/nuke-my-branch"
