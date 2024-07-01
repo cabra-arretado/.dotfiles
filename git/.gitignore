@@ -1,0 +1,22 @@
+# This is just a base, should not be used with Stow.
+[user]
+  name = Felipe
+  email = 80273544+cabra-arretado@users.noreply.github.com
+# Please adapt and uncomment the following lines:
+[credential]
+  helper = osxkeychain
+[push]
+  autoSetupRemote = true
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[diff]
+  external = nvim -d
+  guitool = nvimdiff
+  tool = nvimdiff
+[merge]
+  guitool = nvimdiff
+  tool = nvimdiff
+[difftool]
+  prompt = false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
