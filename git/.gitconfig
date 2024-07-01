@@ -20,3 +20,10 @@
   prompt = false
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[color]
+  ui = auto
+  status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  pager = true
