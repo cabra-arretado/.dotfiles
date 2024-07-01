@@ -7,19 +7,16 @@
   helper = osxkeychain
 [push]
   autoSetupRemote = true
+[difftool]
+  prompt = false
 [difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    cmd = "nvim -d -R \"$LOCAL\" \"$REMOTE\""
 [diff]
-  external = nvim -d
   guitool = nvimdiff
   tool = nvimdiff
 [merge]
   guitool = nvimdiff
   tool = nvimdiff
-[difftool]
-  prompt = false
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [color]
   ui = auto
   status = auto
