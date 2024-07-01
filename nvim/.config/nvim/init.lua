@@ -16,9 +16,9 @@ require('plugins')
 opt.swapfile = false
 opt.backup = false
 opt.number = true
+-- opt.relativenumber = true
 opt.undofile = true
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.relativenumber = true
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.cursorline = true
 opt.splitright = true
