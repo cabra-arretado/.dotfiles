@@ -15,6 +15,9 @@ map({ 'n', 'v' }, '<C-s>', Save_file, { desc = 'Salve Buffer' })
 map({ 'n' }, 'U', 'C-r>')
 map('x', "<leader>p", [["_dP]])
 map({ 'v', 'n' }, "<leader>d", [["_d]])
+map('n', "<leader>q;", "q:", { desc = 'Command Line History' })
+map('n', "<leader>q/", "q/", { desc = 'Search Line History' })
+map('n', "q;", ":q")
 
 
 map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'})
