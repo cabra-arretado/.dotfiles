@@ -80,6 +80,13 @@ ls.add_snippets("typescript", {
       t(")"),
     })
 })
+ls.add_snippets("typescriptreact", {
+    s("pp", {
+      t("console.log("),
+      i(1),
+      t(")"),
+    })
+})
 
 ls.config.set_config {
   history = false,
