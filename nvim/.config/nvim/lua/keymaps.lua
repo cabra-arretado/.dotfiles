@@ -18,6 +18,7 @@ map({ 'v', 'n' }, "<leader>d", [["_d]])
 map('n', "<leader>q;", "q:", { desc = 'Command Line History' })
 map('n', "<leader>q/", "q/", { desc = 'Search Line History' })
 map('n', "q;", ":q")
+map('n', "q:", ":q")
 
 
 map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace under cursor current file'})

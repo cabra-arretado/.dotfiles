@@ -4,12 +4,38 @@ if not ok then
   return
 end
 
-vim.keymap.set({ "i", "s" }, "<C-l>", function()
+-- Mine
+-- vim.keymap.set({ "i", "s" }, "<C-l>", function()
+--   if ls.expand_or_jumpable() then
+--     ls.expand_or_jump()
+--   end
+-- end, { silent = true })
+
+---------------------------------------
+-- Testing TJ for a litte
+---------------------------------------
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true })
+--
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, { silent = true })
 
+vim.keymap.set({ "i" }, "<C-l>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
+
+vim.keymap.set('n', '<leader><leader>s', '<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<cr>')
+-- End TJ ----
+---------------------------------------
+---------------------------------------
 
 -- local s = ls.snippet
 -- local sn = ls.snippet_node
@@ -40,6 +66,27 @@ local types = require("luasnip.util.types")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
+-- ls.snippets = {
+--   all = {
+--     ls.parser.parse_snippet({
+--       "pl",
+--       "-- helllo"
+--     })
+--   }
+-- }
+--   all = {
+--     ls.parser.parse_snippet({
+--       "pl",
+--       "-- helllo"
+--     })
+--   }
+--   -- lua = {
+--   --   ls.parser.parse_snippet({
+--   --     "pp",
+--   --     "print(${1:})"
+--   --   })
+--   -- }
+-- }
 
 ls.config.set_config {
   history = false,
