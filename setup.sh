@@ -6,6 +6,7 @@ links=(
   vim
   nvim
   tmux
+  wezterm
   )
 
 for i in "${links[@]}"
