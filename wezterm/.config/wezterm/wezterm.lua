@@ -7,7 +7,7 @@ config.font_size = 17
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 
-config.leader = { key = ",", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- Define key bindings with the leader key
 config.keys = {
