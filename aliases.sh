@@ -175,7 +175,7 @@ vf()
 # source the helpers repo
 source $DOTPATH/cli-helpers/helpers.sh
 # calling some functions
-create_tmux_session
+# create_tmux_session
 set_vim_mode
 
 # fzf stuff
