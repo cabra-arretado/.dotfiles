@@ -3,6 +3,21 @@ local sessionizer = require("sessionizer")
 
 local config = wezterm.config_builder()
 
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  local pane = tab.active_pane;
+  local title = pane.title;
+
+  -- Customize the title based on the current process or other conditions
+  if title == "v" then
+    return "Neovim";
+  elseif string.find(title, "top") then
+    return "System Monitor";
+  else
+    return title;  -- Default to the original title if no condition matches
+  end
+end)
+
 config.color_scheme = 'Batman'
 config.font_size = 16
 config.window_decorations = "RESIZE"
