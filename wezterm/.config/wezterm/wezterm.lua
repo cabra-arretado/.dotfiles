@@ -48,6 +48,7 @@ config.keys = {
   -- Sessionizer --
   { key = "f", mods = "LEADER", action = wezterm.action_callback(sessionizer.toggle) },
   { key = "F", mods = "LEADER", action = wezterm.action_callback(sessionizer.resetCacheAndToggle) },
+  -- { key = "s", mods = "LEADER", action = wezterm.action { }
 }
 
 return config

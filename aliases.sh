@@ -30,7 +30,7 @@ alias gspop="git stash pop"
 alias gsls="git stash list"
 alias repo="gh repo view --web"
 alias gconfig="vi ~/.gitconfig"
-alias gd="git diff -w | nvim -R -"
+# alias gd="git diff"
 alias gdt="git difftool"
 # Git Scripts
 alias gco="$DOTPATH/scripts/fzf-gco"

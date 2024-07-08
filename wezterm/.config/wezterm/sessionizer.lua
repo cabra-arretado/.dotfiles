@@ -35,9 +35,8 @@ M.toggle = function(window, pane)
 
     for line in stdout:gmatch("([^\n]*)\n?") do
       local project = line:gsub("/.git/$", "")
-      local label = project
       local id = project:gsub(".*/", "")
-      table.insert(projects, { label = tostring(label), id = tostring(id) })
+      table.insert(projects, { label = tostring(id), id = tostring(id) })
     end
     cached = projects
   end
