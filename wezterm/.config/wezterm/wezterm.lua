@@ -3,7 +3,6 @@ local sessionizer = require("sessionizer")
 
 local config = wezterm.config_builder()
 
-
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local pane = tab.active_pane;
   local title = pane.title;
