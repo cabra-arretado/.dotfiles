@@ -3,6 +3,7 @@ This dotifles contain the MacOS configurations for:
 * Vim
 * [Neovim](https://neovim.io)
 * [Tmux](https://github.com/tmux/tmux/wiki)
+* [Wezterm](https://wezfurlong.org/wezterm/index.html)
 * Shell aliases (Bash or Zsh required)
 
 ## Setup
