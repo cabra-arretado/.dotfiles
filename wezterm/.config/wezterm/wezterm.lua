@@ -43,11 +43,14 @@ config.keys = {
   { key = "n", mods = "LEADER", action = wezterm.action { ActivateTabRelative = 1 } },
   { key = "p", mods = "LEADER", action = wezterm.action { ActivateTabRelative = -1 } },
 
+  ---- Some tests
+  --- TODO: Maybe do the SpawnCommand? https://wezfurlong.org/wezterm/config/launch.html#changing-the-default-program
+  { key = "s", mods = "LEADER", action = wezterm.action.ShowLauncherArgs { flags = 'WORKSPACES',  } },
+
   -----------------------------------------------
   -- Sessionizer --
   { key = "f", mods = "LEADER", action = wezterm.action_callback(sessionizer.toggle) },
   { key = "F", mods = "LEADER", action = wezterm.action_callback(sessionizer.resetCacheAndToggle) },
-  -- { key = "s", mods = "LEADER", action = wezterm.action { }
 }
 
 return config

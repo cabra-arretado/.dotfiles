@@ -5,7 +5,7 @@ local act = wezterm.action
 local M = {}
 
 local fd = "/opt/homebrew/bin/fd"
-local homePath = os.getenv("HOME")
+local homePath = wezterm.home_dir
 local rootPath = homePath .. "/workspace"
 
 local cached = {}
@@ -18,6 +18,7 @@ end
 M.toggle = function(window, pane)
   local projects = {}
 
+  -- TODO: maybe `find` should be enough here
   if next(cached) == nil then
     local success, stdout, stderr = wezterm.run_child_process({
       fd,
@@ -25,6 +26,8 @@ M.toggle = function(window, pane)
       "-I",
       "-td",
       "^.git$",
+      "-d",
+      "3",
       rootPath,
     })
 
