@@ -21,6 +21,7 @@ config.color_scheme = 'Batman'
 config.font_size = 16
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
+config.audible_bell = "Disabled"
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
