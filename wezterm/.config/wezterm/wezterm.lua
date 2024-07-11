@@ -17,6 +17,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   end
 end)
 
+config.window_padding = {
+  left = 1,
+  right = 1,
+  top = 0,
+  bottom = 0,
+}
+
 config.color_scheme = 'Batman'
 config.font_size = 16
 config.window_decorations = "RESIZE"
