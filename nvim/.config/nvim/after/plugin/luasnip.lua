@@ -66,6 +66,7 @@ local types = require("luasnip.util.types")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
+--- Print snippet
 ls.add_snippets("lua", {
     s("pp", {
       t("print("),
@@ -80,6 +81,13 @@ ls.add_snippets("typescript", {
       t(")"),
     })
 })
+ls.add_snippets("python", {
+    s("pp", {
+      t("print("),
+      i(1),
+      t(")"),
+    })
+})
 ls.add_snippets("typescriptreact", {
     s("pp", {
       t("console.log("),
@@ -87,6 +95,14 @@ ls.add_snippets("typescriptreact", {
       t(")"),
     })
 })
+ls.add_snippets("go", {
+    s("pp", {
+      t("fmt.Printf("),
+      i(1),
+      t(")"),
+    })
+})
+
 
 ls.config.set_config {
   history = false,
