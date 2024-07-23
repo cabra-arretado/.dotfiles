@@ -45,7 +45,8 @@ g.markdown_remmended_style = 0
 
 -- Theme
 -- local theme = [[catppuccin-mocha]]
-local theme = [[github_dark_dimmed]]
+local theme = [[catppuccin-macchiato]]
+-- local theme = [[github_dark_dimmed]]
 cmd.colorscheme(theme)
 
 

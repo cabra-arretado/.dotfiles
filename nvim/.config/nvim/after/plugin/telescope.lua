@@ -14,6 +14,7 @@ telescope.setup {
       "--line-number",
       "--column",
       "--smart-case",
+      "-F" -- Maybe to remove that later
     },
     prompt_prefix = " 🔍  ",
     selection_caret = "  ",
