@@ -84,7 +84,7 @@ vim.diagnostic.config({
 
 local ensure_installed = {
   'pyright',
-  'tsserver',
+  'ts_ls',
   'gopls',
   'rust_analyzer',
   'eslint',
