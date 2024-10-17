@@ -68,35 +68,35 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 --- Print snippet
 ls.add_snippets("lua", {
-    s("pp", {
+    s("print", {
       t("print("),
       i(1),
       t(")"),
     })
 })
 ls.add_snippets("typescript", {
-    s("pp", {
+    s("print", {
       t("console.log("),
       i(1),
       t(")"),
     })
 })
 ls.add_snippets("python", {
-    s("pp", {
+    s("print", {
       t("print("),
       i(1),
       t(")"),
     })
 })
 ls.add_snippets("typescriptreact", {
-    s("pp", {
+    s("print", {
       t("console.log("),
       i(1),
       t(")"),
     })
 })
 ls.add_snippets("go", {
-    s("pp", {
+    s("print", {
       t("fmt.Printf("),
       i(1),
       t(")"),
