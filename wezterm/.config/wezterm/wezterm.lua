@@ -24,7 +24,8 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.color_scheme = 'Batman'
+config.color_scheme = 'Andromeda'
+-- config.color_scheme = 'Tokyo Night'
 config.font_size = 16
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
