@@ -201,12 +201,12 @@ return require('lazy').setup({
   ---------------------------------------------------
   -- THEMES
   --
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   --
   -- {
   --   "rebelot/kanagawa.nvim",
@@ -215,8 +215,8 @@ return require('lazy').setup({
   --   'rose-pine/neovim',
   --   name = 'rose-pine'
   -- },
-  { "catppuccin/nvim" },
-  { "projekt0n/github-nvim-theme" },
+  -- { "catppuccin/nvim" },
+  -- { "projekt0n/github-nvim-theme" },
   -- { "sainnhe/sonokai" },
   -- {
   --   'Mofiqul/vscode.nvim'
